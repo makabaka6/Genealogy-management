@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop.xsd
+       http://www.springframework.org/schema/tx
+       http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+
+
+<!--配置要扫描的包-->
+    <!--开启扫描-->
+    <context:component-scan base-package="cn.LysGroup">
+        <!--配置被controller注解的包不被扫描，因为他是mvc扫描-->
+        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
+    <!--配置mybatis开始-->
+    <!-- 加载数据库连接的资源文件 -->
+    <context:property-placeholder location="classpath:jdbc.properties"/>
+    <!--配置连接池-->
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
+        <property name="driverClassName" value="${driver.driver}"/>
+        <property name="url" value="${url.url}"/>
+        <property name="username" value="${username.username}"/>
+        <property name="password" value="${password.password}"/>
+    </bean>
+    <!-- 配置SqlSession的工厂 -->
+    <bean id="sessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <!--扫描包，配置别名-->
+        <property name="typeAliasesPackage" value="cn.LysGroup.domain"/>
+    </bean>
+    <!-- mapper 扫描器 ：用来产生dao接口的代理对象-->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="cn.LysGroup.dao"/>
+    </bean>
+    <!--配置mybatis结束-->
+    <!--业务层配置开始-->
+    <!--配置事务管理器-->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+    <!--配置通知-->
+    <tx:advice id="txAdvice" transaction-manager="transactionManager">
+        <tx:attributes>
+            <tx:method name="find*" read-only="true"/>
+            <tx:method name="*" isolation="DEFAULT"/>
+        </tx:attributes>
+    </tx:advice>
+    <!--配置aop-->
+    <aop:config>
+        <aop:pointcut id="cut" expression="execution(* cn.LysGroup.service.impl.*.*(..))"/>
+        <aop:advisor advice-ref="txAdvice" pointcut-ref="cut"/>
+    </aop:config>
+    <!--业务层配置结束-->
+</beans>
