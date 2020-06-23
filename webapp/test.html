@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+    <link rel="stylesheet" href="css/reset.css">
+</head>
+
+<body onLoad="createCode()">
+
+    <style type="text/css">
+        
+        .unchanged {
+            border: 0;
+        }
+        .check_form{
+            overflow: hidden;
+        }
+        #validCode{
+            width: 165px;
+            height: 30px;
+            text-indent: 5px;
+            border-radius: 6px;
+            font-size: 16px;
+            padding: 0;
+            box-sizing: border-box;
+            float: left;
+            outline: none;
+            border: 1px solid orange;
+        }
+        #checkCode{
+            width: 100px;
+            height: 30px;
+            border-radius: 6px;
+            font-size: 16px;
+            text-align: center;
+            background-color: #ccc;
+            float: right;
+            border: none;
+            color: red;
+            line-height: 30px;
+            cursor: pointer;
+            box-sizing: border-box;
+
+        }
+        
+        .check{
+            width: 100%;
+            margin-top: 30px;
+            float: right;
+            text-align: center;
+        }
+        #Button1{
+            width: 112px;
+            height: 30px;
+            border-radius: 6px;
+            margin-right: 50px;
+            outline: none;
+            font-size: 16px;
+            color: #75759d;
+            border: 1px solid orange;
+            cursor: pointer;
+            box-sizing: border-box;
+            
+        }
+    </style>
+    <script language="javascript" type="text/javascript">
+        var code; //在全局 定义验证码   
+        function createCode() {
+            code = "";
+            var codeLength = 6; //验证码的长度   
+            var checkCode = document.getElementById("checkCode");
+            var selectChar = new Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J',
+                'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
+                ); //所有候选组成验证码的字符，当然也可以用中文的      
+            for (var i = 0; i < codeLength; i++) {
+                var charIndex = Math.floor(Math.random() * 36);
+                code += selectChar[charIndex];
+            }
+            if (checkCode) {
+                checkCode.className = "code";
+                checkCode.value = code;
+                checkCode.blur();
+            }
+        }
+
+        function validate() {
+            var inputCode = document.getElementById("validCode").value;
+            if (inputCode.length <= 0) {
+                alert("请输入验证码！");
+            } else if (inputCode.toUpperCase() != code) {
+                alert("验证码输入错误！");
+                createCode(); //刷新验证码   
+            } else {
+                alert("验证码验证成功!");
+            }
+        }
+    </script>
+    <form action="#" class="check_form" >
+        <input type="text" id="validCode" placeholder="请输入验证码"/>
+        <input type="button" onClick="createCode()" id="checkCode" />
+        
+        <div class="check">
+            <input id="Button1" onClick="validate();" type="button" value="登录" />
+            <input type="checkbox"><span style="color: #75759d; cursor: pointer;">自动登录</span>
+        </div>
+    </form>
+
+</body>
+</html>
