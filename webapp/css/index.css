@@ -1,10 +1,17 @@
 /* 头部开始 */
+html {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
 body {
+    width: 100%;
     position: relative;
+
 }
 
 .header {
-    width: 100%;
+    width: 100vw;
     height: 80px;
     font-size: 28px;
     background-color: white;
@@ -52,16 +59,18 @@ body {
     border-radius: 8px;
     cursor: pointer;
 }
-.header .login_button span:hover{
+
+.header .login_button span:hover {
     background-color: orange;
     color: white;
 }
+
 /* 头部结束 */
 
 /* 中间区域开始 */
 
 .container {
-    width: 1519px;
+    width: 100vw;
     height: 800px;
     /* background: crimson; */
     overflow: hidden;
@@ -69,18 +78,19 @@ body {
 }
 
 .container .swiper {
-    width: 300%;
+    width: 300vw;
     height: 100%;
     /* background: green; */
     margin-left: 0;
-    
+
     overflow: hidden;
 }
 
 .container .swiper li {
-    width: 1519px;
+    width: 100vw;
     height: 100%;
     float: left;
+    overflow: hidden;
     /* background: brown; */
 }
 
@@ -109,24 +119,27 @@ body {
     font-size: 28px;
     color: rgba(51, 51, 51, 1);
 }
-.container .login_frame .introduction{
+
+.container .login_frame .introduction {
     color: red;
     /* display: none; */
-  
-    visibility:hidden;
+
+    visibility: hidden;
 }
-.container .login_frame .acount, .container .login_frame .pwd{
+
+.container .login_frame .acount,
+.container .login_frame .pwd {
 
     width: 300px;
     height: 30px;
     font-size: 16px;
-    
+
     margin-top: 20px;
     border-radius: 8px;
     overflow: hidden;
     outline: none;
     border: 1px solid orange;
-    background-color:#f0f0f0;
+    background-color: #f0f0f0;
     padding: 5px;
 }
 
@@ -140,19 +153,22 @@ body {
     /* background-color: pink; */
     overflow: hidden;
 }
-.container .login_frame .code .code_check{
+
+.container .login_frame .code .code_check {
     width: 100%;
     height: 100%;
     line-height: 100%;
 }
-.container .login_frame .login_btn{
+
+.container .login_frame .login_btn {
 
     width: 312px;
     height: 30px;
     margin: 0 auto;
     margin-top: 20px;
-} 
-.container .login_frame .login_btn .btn{
+}
+
+.container .login_frame .login_btn .btn {
     float: left;
     width: 150px;
     height: 100%;
@@ -162,14 +178,15 @@ body {
     border: 1px solid orange;
     border-radius: 6px;
 }
-.container .login_frame .login_btn .check{
+
+.container .login_frame .login_btn .check {
     line-height: 30px;
     float: right;
     width: 100px;
     height: 100%;
 }
 
-.container .login_frame .register{
+.container .login_frame .register {
     width: 250px;
     height: 30px;
     margin-top: 40px;
@@ -181,16 +198,18 @@ body {
     cursor: pointer;
     background-color: white;
 }
-.container .login_frame .register:hover{
+
+.container .login_frame .register:hover {
     background-color: orange;
     color: white;
 }
+
 /* 中间注册区域结束 */
 /* 中间区域结束 */
 
 /* footer区域开始 */
 .footer {
-    width: 100%;
+    width: 100vw;
     height: 80px;
     background: white;
     text-align: center;
