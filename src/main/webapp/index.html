@@ -55,7 +55,7 @@
             text-align: center;
         }
 
-        #Button1 {
+        #Button1,#Button2 {
             width: 112px;
             height: 30px;
             border-radius: 6px;
@@ -70,7 +70,7 @@
 
         }
 
-        #Button1:hover {
+        #Button1,#Button2:hover {
             background-color: orange;
             color: white;
         }
@@ -98,27 +98,7 @@
                 checkCode.blur();
             }
         }
-        $(function () {
-            
-            $('#Button1').click(function(){
-                console.log("选中Button");
-                var inputCode = document.getElementById("validCode").value;
-                console.log(inputCode);
-                if (inputCode.length <= 0) {
-                    // alert("请输入验证码！");
-                    
-                    $('.introduction', window.parent.document).css('visibility', 'visible');
-                    
-                } else if (inputCode.toUpperCase() != code) {
-                    alert("验证码输入错误！");
-                    createCode(); //刷新验证码   
-                } else {
-                    alert("验证码验证成功!");
-                }
-            })
-        })
     </script>
-
 
 
     <div class="header">
@@ -132,7 +112,7 @@
         </div>
     </div>
     <div class="container">
-        <ul class="swiper">
+        <ul class="swiper">/*轮播图*/
             <li><a href="javascript:void(0)"><img src="img/index_back.png" alt=""></a></li>
             <li><a href="javascript:void(0)"><img src="img/login02.jpg" alt=""></a></li>
             <li><a href="javascript:void(0)"><img src="img/login03.jpg" alt=""></a></li>
@@ -141,8 +121,8 @@
             <h4>登录</h4>
             <form action="">
                 <span class="introduction" style="color: red;">请输入验证码</span>
-                <input type="text" class="acount" placeholder="请输入账号">
-                <input type="password" class="pwd" placeholder="请输入密码">
+                <input type="text" id="acount" placeholder="请输入账号">
+                <input type="password" id="pwd" placeholder="请输入密码">
 
                 <div class="code">
                     <!-- <input type="text" placeholder="验证码" class="code_num">
@@ -166,7 +146,20 @@
             
             
         </div>
-    </div>
+        <div class="register_frame">
+			 <h4>注册</h4>
+			 <input type="button" name="" value="返回登录" class="toinput">
+			 <form action="">
+			     <input type="text" id="write_count" placeholder="请输入用户名" maxlength="8" style="left: 200px; position: absolute;">
+			     <span class="writeid" style="color: red;text-align: center;display:block;">用户名已经被注册</span>
+				 <input type="text" id="write_pwd" placeholder="请输入密码"  style="top:145px; position: absolute;">
+				 <input type="text" id="write_pwd2" placeholder="请再次输入密码" style="top:220px;position: absolute;">
+				 <div class="check_register" >
+				     <input id="Button2" type="button" value="注册" style="position:absolute;top:320px;left:200px" />
+				 </div>		 
+			 </form>
+		</div>
+	</div>
     <div class="footer">
         <p>关于族谱&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;联系我们</p>
         <p>Copyright&nbsp;&nbsp;2020&nbsp;&nbsp;dianzizupu.com&nbsp;&nbsp;川ICP备1804531号-5</p>
