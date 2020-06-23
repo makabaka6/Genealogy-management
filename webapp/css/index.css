@@ -46,13 +46,16 @@ body {
 .header .login_button span {
     font-size: 20px;
     padding: 10px 20px 10px 20px;
-    background-color: coral;
-    color: white;
-    border: 2px solid white;
+    background-color: white;
+    color: orange;
+    border: 2px solid orange;
     border-radius: 8px;
     cursor: pointer;
 }
-
+.header .login_button span:hover{
+    background-color: orange;
+    color: white;
+}
 /* 头部结束 */
 
 /* 中间区域开始 */
@@ -60,7 +63,7 @@ body {
 .container {
     width: 1519px;
     height: 800px;
-    background: crimson;
+    /* background: crimson; */
     overflow: hidden;
     /* position: relative; */
 }
@@ -68,8 +71,9 @@ body {
 .container .swiper {
     width: 300%;
     height: 100%;
-    background: green;
+    /* background: green; */
     margin-left: 0;
+    
     overflow: hidden;
 }
 
@@ -77,16 +81,15 @@ body {
     width: 1519px;
     height: 100%;
     float: left;
-    background: brown;
+    /* background: brown; */
 }
 
 .container .swiper li img {
     display: block;
+    cursor: default;
     width: 100%;
     height: 100%;
 }
-
-
 
 /* 中间注册区域开始 */
 /**注册**/
@@ -106,8 +109,11 @@ body {
     font-size: 28px;
     color: rgba(51, 51, 51, 1);
 }
-.container .login_frame .introdution{
+.container .login_frame .introduction{
     color: red;
+    /* display: none; */
+  
+    visibility:hidden;
 }
 .container .login_frame .acount, .container .login_frame .pwd{
 
@@ -170,10 +176,14 @@ body {
     outline-style: none;
     border-radius: 6px;
     font-size: 16px;
-    color: #75759d;
+    color: orange;
     border: 1px solid orange;
     cursor: pointer;
-    background-color: #f0f0f0;
+    background-color: white;
+}
+.container .login_frame .register:hover{
+    background-color: orange;
+    color: white;
 }
 /* 中间注册区域结束 */
 /* 中间区域结束 */

@@ -1,0 +1,32 @@
+@keyframes fade{
+    0%{
+        opacity: 1;
+    }
+    
+    50%{
+        opacity: 0.4;
+    }
+    
+    100%{
+        opacity: 1;
+    }
+
+}
+@keyframes rotateIn{
+    0%{
+        transform: translate(800px,-800px);
+    }
+    /* 50%{
+        transform: translate(400px,-400px);
+    } */
+    100%{
+        transform: translate(0,0);
+    }
+}
+.header .left_logo:hover{
+    cursor: pointer;
+    animation: fade 2s linear infinite;
+}
+.login_frame{
+    animation: rotateIn 1s linear;
+}

@@ -6,31 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>test</title>
     <link rel="stylesheet" href="css/reset.css">
+    <script src="js/Jquery.js"></script>
 </head>
 
 <body onLoad="createCode()">
 
     <style type="text/css">
-        
         .unchanged {
             border: 0;
         }
-        .check_form{
+
+        .check_form {
             overflow: hidden;
         }
-        #validCode{
+
+        #validCode {
             width: 165px;
             height: 30px;
             text-indent: 5px;
             border-radius: 6px;
             font-size: 16px;
+            background-color: #f0f0f0;
             padding: 0;
             box-sizing: border-box;
             float: left;
             outline: none;
             border: 1px solid orange;
         }
-        #checkCode{
+
+        #checkCode {
             width: 100px;
             height: 30px;
             border-radius: 6px;
@@ -45,25 +49,32 @@
             box-sizing: border-box;
 
         }
-        
-        .check{
+
+        .check {
             width: 100%;
             margin-top: 30px;
             float: right;
             text-align: center;
         }
-        #Button1{
+
+        #Button1 {
             width: 112px;
             height: 30px;
             border-radius: 6px;
             margin-right: 50px;
             outline: none;
             font-size: 16px;
-            color: #75759d;
+            color: orange;
             border: 1px solid orange;
+            background-color: white;
             cursor: pointer;
             box-sizing: border-box;
-            
+
+        }
+
+        #Button1:hover {
+            background-color: orange;
+            color: white;
         }
     </style>
     <script language="javascript" type="text/javascript">
@@ -72,9 +83,10 @@
             code = "";
             var codeLength = 6; //验证码的长度   
             var checkCode = document.getElementById("checkCode");
-            var selectChar = new Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J',
+            var selectChar = new Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H',
+                'I', 'J',
                 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
-                ); //所有候选组成验证码的字符，当然也可以用中文的      
+            ); //所有候选组成验证码的字符，当然也可以用中文的      
             for (var i = 0; i < codeLength; i++) {
                 var charIndex = Math.floor(Math.random() * 36);
                 code += selectChar[charIndex];
@@ -85,28 +97,35 @@
                 checkCode.blur();
             }
         }
-
-        function validate() {
-            var inputCode = document.getElementById("validCode").value;
-            if (inputCode.length <= 0) {
-                alert("请输入验证码！");
-            } else if (inputCode.toUpperCase() != code) {
-                alert("验证码输入错误！");
-                createCode(); //刷新验证码   
-            } else {
-                alert("验证码验证成功!");
+        $(function () {
+            function validate() {
+                var inputCode = document.getElementById("validCode").value;
+                console.log(inputCode);
+                if (inputCode.length <= 0) {
+                    // alert("请输入验证码！");
+                    
+                    $('.introduction', window.parent.document).css('visibility', 'visible');
+                    
+                } else if (inputCode.toUpperCase() != code) {
+                    alert("验证码输入错误！");
+                    createCode(); //刷新验证码   
+                } else {
+                    alert("验证码验证成功!");
+                }
             }
-        }
+            $('#Button1').click(validate());
+        })
     </script>
-    <form action="#" class="check_form" >
-        <input type="text" id="validCode" placeholder="请输入验证码"/>
+    <form action="#" class="check_form">
+        <input type="text" id="validCode" placeholder="请输入验证码" />
         <input type="button" onClick="createCode()" id="checkCode" />
-        
+
         <div class="check">
-            <input id="Button1" onClick="validate();" type="button" value="登录" />
+            <input id="Button1" type="button" value="登录" />
             <input type="checkbox"><span style="color: #75759d; cursor: pointer;">自动登录</span>
         </div>
     </form>
 
 </body>
+
 </html>
