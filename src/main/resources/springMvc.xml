@@ -13,8 +13,8 @@
     <context:component-scan base-package="cn.LysGroup.controller"/>
     <!--配置视图解析器-->
     <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <!-- JSP文件所在的目录 -->
-        <property name="prefix" value="/WEB-INF/pages/"/>
+        <!-- html件所在的目录 -->
+        <property name="prefix" value="/"/>
         <!-- 文件的后缀名 -->
         <property name="suffix" value=".html"/>
     </bean>

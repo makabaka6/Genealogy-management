@@ -252,7 +252,6 @@ body {
 .container .register_frame .writeid {
 	color: red;
 	/* display: none; */
-	visibility: hidden;
 }
 /*中间登录区域*/
 /* 中间区域结束 */
