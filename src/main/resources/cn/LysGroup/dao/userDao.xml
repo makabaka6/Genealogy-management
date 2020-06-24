@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.LysGroup.dao.userDao">
+    <!--通过姓名查询是否存在该用户-->
+    <select id="findByName" resultType="user" parameterType="String">
+        select * from user where uid =#{name} ;
+    </select >
+    <!--保存用户-->
+    <insert id="saveUser" parameterType="user">
+        insert into user values (#{uid},#{upassword});
+    </insert>
+    <!--查询用户的账号和密码是否正确-->
+    <select id="login" parameterType="user" resultType="user">
+        select * from user where uid=#{uid} and upassword=#{upassword};
+    </select>
+</mapper>
