@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.LysGroup.dao.familyDao">
+    <!--创建族谱-->
+    <insert id="createFamily" parameterType="family">
+        insert into family values (#{F_id},#{F_name},#{F_surname},
+                                  #{F_datedate},#{F_precepts},#{F_intro},#{F_events});
+    </insert >
+    <!--删除族谱-->
+    <delete id="deleteFamily" parameterType="int">
+        delete from family where F_id=#{F_id};
+    </delete>
+    <!--查询所有族谱-->
+    <select id="findAllFamily"  resultType="family">
+        select * from family ;
+    </select>
+    <!--更新族谱-->
+    <update id="updateFamily" parameterType="family">
+        update family set F_name = #{F_name},F_surname= #{F_surname},F_datedate= #{F_datedate},
+              F_precepts= #{F_precepts},F_intro= #{F_intro},F_events= #{F_events}
+              where F_id=#{F_id};
+    </update>
+    <!--通过名称查询族谱-->
+    <select id="findByName" parameterType="string" resultType="family">
+      select * from family where F_name=#{F_name}
+    </select>
+</mapper>

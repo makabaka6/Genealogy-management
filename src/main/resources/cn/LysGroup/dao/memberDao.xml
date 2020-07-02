@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.LysGroup.dao.memberDao">
+    <!--添加成员-->
+    <insert id="addMember" parameterType="member">
+        insert into member values (#{M_id},#{M_name},#{M_fid},
+                                  #{M_father},#{M_sex},#{M_date},#{M_spose});
+    </insert >
+
+    <!--删除成员-->
+    <delete id="deleteMember" parameterType="int">
+        delete from member where M_id=#{M_id};
+    </delete>
+
+    <!--查询族谱总人数-->
+    <select id="findTotal"  resultType="int" parameterType="int">
+        select count(*) from member where M_fid=#{M_fid};
+    </select>
+
+    <!--更新成员-->
+    <update id="updateMember" parameterType="member">
+        update member set M_name= #{M_name},M_fid= #{M_fid},M_father= #{M_father},
+                M_sex= #{M_sex}, M_date = #{M_date},M_spose= #{M_spose}
+              where M_id=#{M_id};
+    </update>
+
+    <!--查询人员信息-->
+    <select id="findByName" parameterType="string" resultType="member">
+        select * from member where M_name=#{M_name}
+    </select>
+
+    <!--查询当前族谱总的男生人数-->
+    <select id="findSexTotal" parameterType="int" resultType="int">
+        select count(*) from member where M_fid=#{M_fid} and M_sex='男';
+    </select>
+</mapper>

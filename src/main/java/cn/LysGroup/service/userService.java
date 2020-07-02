@@ -20,4 +20,9 @@ public interface userService {
      * @return
      */
     User login(User user);
+    /**
+     * 更改用户的密码
+     * @param user
+     */
+    void updatePassword(User user);
 }

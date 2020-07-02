@@ -2,7 +2,7 @@ package cn.LysGroup.dao;
 
 import cn.LysGroup.domain.User;
 import org.springframework.stereotype.Repository;
-
+//用户管理dao
 @Repository
 public interface userDao {
     /**
@@ -24,4 +24,10 @@ public interface userDao {
      * @return
      */
     User login(User user);
+
+    /**
+     * 更改用户的密码
+     * @param user
+     */
+    void updatePassword(User user);
 }

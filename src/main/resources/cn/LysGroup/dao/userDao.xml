@@ -15,4 +15,8 @@
     <select id="login" parameterType="user" resultType="user">
         select * from user where uid=#{uid} and upassword=#{upassword};
     </select>
+    <!--修改用户的密码-->
+    <update id="updatePassword" parameterType="user">
+        update user set upassword = #{upassword} where uid=#{uid};
+    </update>
 </mapper>
