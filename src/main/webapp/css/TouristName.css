@@ -1,5 +1,14 @@
-
+.a:hover{
+    border-bottom: 3px solid #e60214;
+    cursor: pointer ;
+	color: #e60214;
+	text-decoration:underline 2px;
+    }
+.a{
+    color: black;
+}
 @media (min-width: 1200px) {
+    
     .wall{
         position:fixed;top:0;left:0;height: 100px;background: #ffffff;
         width: 100%;

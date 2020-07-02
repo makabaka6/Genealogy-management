@@ -1,0 +1,100 @@
+/* 创建族谱开始*/
+.container {
+    width: 1519px;
+	height: 950px;
+	overflow: hidden;
+}
+.container .unzpbox #local {
+    font-size: 18px;
+    width: 1200px;
+    height: 30px;
+    background: #FFC300;
+        background-position-x: 0%;
+        background-position-y: 0%;
+        background-repeat: repeat;
+        background-image: none;
+    margin: 100px auto 300px;
+    padding-left: 0.4rem;
+    line-height: 30px;
+    background-repeat: no-repeat;
+    background-position: 0.2rem center;
+}
+.container .unzpbox .createzp {
+	padding:6px;
+	position: absolute;
+	left: 200px;
+	top: 180px;
+	width: 1100px;
+	height: 650px;
+	background: white;
+}
+.container .unzpbox .createzp .zpimage{
+	position: absolute;
+	width: 500px;
+	height: 100%;
+}
+.container .unzpbox .createzp .zptext{
+	left:500px;
+	position: absolute;
+	width: 600px;
+	height: 100%;
+}
+.container .unzpbox .createzp .input_unzp{
+	width: 300px;
+	height: 30px;
+	font-size: 16px;
+	
+	margin-top: 20px;
+	border-radius: 8px;
+	overflow: hidden;
+	outline: none;
+	border: 1px solid orange;
+	background-color: #f0f0f0;				
+	padding: 5px;
+}
+.container .unzpbox .createzp #write_jx{
+	width: 500px;
+}
+.container .unzpbox .createzp #write_intro{
+	width: 500px;
+	height: 100px;
+	resize:none;
+	overflow: auto; width: 500px; height: 100px;
+}
+.container .unzpbox .createzp #write_big{	
+	width: 500px;
+	height: 200px;
+	resize:none;
+	overflow: auto; width: 500px; height: 200px;
+}
+.container .unzpbox .error-desc1,.error-desc2{
+	color: cornflowerblue;
+}
+.check {
+	width: 100%;
+	margin-top: 30px;
+	float: right;
+	text-align: center;
+}
+#fincreate {
+	width: 112px;
+	height: 30px;
+	border-radius: 6px;
+	margin-right: 50px;
+	outline: none;
+	font-size: 16px;
+	color: orange;
+	border: 1px solid orange;
+	background-color: white;
+	cursor: pointer;
+	box-sizing: border-box;
+}
+#fincreate:hover {
+	background-color: orange;
+	color: white;
+	}
+#alart{
+	visibility: hidden;
+}
+/*创建族谱结束*/
+/* 中间区域结束 */

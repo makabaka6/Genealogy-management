@@ -39,7 +39,7 @@ $(function(){
 							//登录成功进入主页面
 							if(data.flag==true){
 								//进入主页面
-								location.href=""
+								location.href="src\main\webapp\main.html"
 							}
 							// 登录失败
 							if(data.flag==false){
@@ -49,21 +49,25 @@ $(function(){
 						}
 					})
 					}
-	            })
+				})
+				
 	$('.register').click(function(){
 		var login=$('.login_frame');
 		var register=$('.register_frame');
 		login.css("visibility","hidden");
 		register.css("visibility","visible");
 	})
+
 	$('.toinput').click(function() {
 		var login = $('.login_frame');
 		var register = $('.register_frame');
 		login.css("visibility", "visible");
 		register.css("visibility", "hidden");
 	})
+
 	$('#write_count').blur(function(){
 		var name = $("#write_count").val();
+
 		 $.post("user/findNameIsExist",{username:name},function (data) {
 		   if(data.flag==false){
 			   $("#msg").css("visibility","visible")
@@ -76,9 +80,11 @@ $(function(){
 	})
 
     $("#Button2").click(function () {
+		
 		var name_value=document.getElementById("write_count").value;
 		var write_pwd = document.getElementById("write_pwd").value;
 		var write_pwd2 = document.getElementById("write_pwd2").value;
+
 		if(write_pwd != write_pwd2)
 		{
 			alert('两次输入的密码不一致!');
