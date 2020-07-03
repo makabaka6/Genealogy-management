@@ -29,9 +29,9 @@ body {
 	height: 100%;
 	float: left;
 	background: url(../img/logo.png) no-repeat;
-	background-position: center;
+	/* background-position: center; */
 	background-size: cover;
-	/* background-size: cover; */
+
 }
 
 .header .login_button {

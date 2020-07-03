@@ -30,7 +30,7 @@ body {
 	float: left;
 	background: url(../img/logo.png) no-repeat;
 	background-position: center;
-	background-size: cover;
+	background-size: contain;
 	/* background-size: cover; */
 }
 .navbox {
