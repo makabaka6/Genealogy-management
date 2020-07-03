@@ -1,0 +1,292 @@
+.container {
+    width: 1519px;
+	height: 950px;
+	overflow: hidden;
+}
+.myzpbox{
+    position: relative;
+    float: right;
+    width: 460px;
+    top:120px;
+    padding: 26px 0 0;
+}
+.myzpbox .personbox{
+    display: block;
+    visibility: visible;
+    height: 0;
+    overflow: hidden;
+    content: '.';
+}
+.myzpbox .personbox .person_img,.person_name,.icon_menu{
+    position: absolute;
+    top: 26px;
+}
+.person_img{
+    left: 300px;
+    width: 70px;
+    text-align: center; 
+}
+#linkabout{
+    width: 20px;
+    border-top: 1px solid #fff;
+    padding: 12px 0 0;
+    margin: 12px 0 0;
+    line-height: 120%;
+    color: #fff;
+    font-weight: bold;
+    display: inline-block;
+    font-family:"宋体";
+    font:white;
+    transition: color .5s;
+}
+#linkabout:hover{
+    color:#6f727b;
+}
+
+.name_title{
+    left: 20px;
+    width: 70px;
+    margin-left: 180px;
+    font-weight: bold;
+    text-align: center;
+    line-height:13pt";
+}
+.img1{
+    opacity: 1;
+    transition: opacity .5;
+    -webkit-transition: all .5s; 
+    -moz-transition: all .5s; 
+    -ms-transition: all .5s; 
+    -o-transition: all .5s; 
+}
+.img1:hover{
+    opacity:0.7;
+}
+.name_title .ttl{
+    top: -10px;
+    color: #fff;
+    width: 70px;
+    font:bold 70px/91px simsun,"宋体",arial;
+    transition: color .5;
+    -webkit-transition: all .5s; 
+    -moz-transition: all .5s; 
+    -ms-transition: all .5s; 
+    -o-transition: all .5s; 
+}
+.name_title .ttl:hover{
+    color:#6f727b;
+}
+.icon_menu{
+    left: 0;
+    width: 100px;
+}
+.createzp{
+    width: 50px;
+    height: 60px;
+    display: inline-block;
+    background: 0 0px url(../img/icon01.png); 
+}
+.createzp:hover{
+    background: 0 -398.7px url(../img/icon01.png); 
+}
+.menuabout{
+    width: 100px;
+    margin-left:-5px;
+    line-height: 120%;
+    color: #fff;
+    font-weight: bold;
+    display: inline-block;
+    font-family:"宋体";
+    font:white;
+}
+.showzp{
+    margin-left: 120px;
+    top:100px;
+    position: relative;
+    float: left;
+    width: 900px;
+    height: 600px;
+    background: #fff;
+}
+#local{
+    flex: 4;
+    font-size: 18px;
+    width: 880px;
+    height: 50px;
+    background: #999900;
+        background-position-x: 0%;
+        background-position-y: 0%;
+        background-repeat: repeat;
+        background-image: none;
+    margin: 10px auto 0px;
+    padding-left: 0.4rem;
+    line-height: 30px;
+    background-repeat: no-repeat;
+    background-position: 0.2rem center;
+    overflow: hidden;
+}
+.contitle{
+    float: left;
+line-height: 50px;
+text-indent: 20px;
+font-size: 16px;
+color: #fff;
+padding-right: 30px;
+border-right: 1px solid #fff;
+}
+.modification{
+    float: left;
+line-height: 50px;
+text-indent: 20px;
+font-size: 16px;
+color: #fff;
+}
+.entering{
+    float: left;
+    line-height: 50px;
+    text-indent: 20px;
+    font-size: 16px;
+    color: #fff;
+}
+.family_UI{
+    margin-left: 20px;
+    margin-top: 10px;
+    width: 964px;
+}
+.boxLi{
+    background-color: #e8e9db;
+    height: 315px;
+    width: 400px;
+    border: 1px solid #E0DFDF;
+    display: inline-block;
+    overflow: hidden;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+}
+.zpcontent{
+    padding-left: 30px;
+    margin-top: 24px;
+    width: 363px;
+    overflow: hidden;
+    float: left;
+}
+.zp_img{
+    width: 150px;
+    height: 200px;
+    background: url(../img/zp01.jpg) no-repeat;
+    background-size: auto;
+    background-size: cover;
+}
+.zp_icon{
+    margin-left: 120px;
+    padding-left: 2px;
+    margin-top: 20px;
+    width: 20px;
+    height: 100px;
+    position: absolute;
+    top: 10px;
+    background: white;
+    text-align: center;
+    writing-mode: vertical-lr;
+}
+.famConRight{
+    float: left;
+    position: absolute;
+    margin-left:200px;
+    top: 30px;
+    width: 186px;
+    height: 100px;
+}
+.zp_name{
+width: 100%;
+font-size: 20px !important;
+font-family: MicrosoftYaHei-Bold;
+font-weight: bold !important;
+color: rgba(51,51,51,1) !important;
+display: -webkit-box;
+overflow: hidden;
+white-space: normal !important;
+text-overflow: ellipsis;
+word-wrap: break-word;
+-webkit-line-clamp: 2;
+-webkit-box-orient: vertical;
+height: auto;
+line-height: 1.1;
+}
+.famConRight p {
+    font-size: 15px;
+    color: #999999;
+}
+.lrBtns{
+display: inline-block;
+width: 130px;
+height: 37px;
+background-color: #90d4d6;
+font-size: 15px;
+margin-top: 70px;
+font-family: MicrosoftYaHei;
+font-weight: 400;
+color: rgba(255,255,255,1);
+text-align: center;
+line-height: 37px;
+border-radius: 4px;
+}
+.zpmenu{
+    padding-top: 5px;
+    margin-top: 20px;
+    width: 400px;
+    height: 70px;
+    overflow: hidden;
+    float: left;
+    background-color: rgb(211, 208, 156);
+}
+.zp1{
+    width: 50px;
+    height: 60px;
+    display: inline-block;
+    background: 0 0px url(../img/icon01.png); 
+}
+.zp1:hover{
+    background: 0 -398.7px url(../img/icon01.png); 
+}
+.zp2{
+    width: 50px;
+    height: 60px;
+    display: inline-block;
+    background: 0 -67px url(../img/icon01.png); 
+}
+.zp2:hover{
+    background: 0 -466.2px url(../img/icon01.png); 
+}
+.zp3{
+    width: 50px;
+    height: 60px;
+    display: inline-block;
+    background: 0 -132px url(../img/icon01.png); 
+}
+.zp3:hover{
+    background: 0 -531.2px url(../img/icon01.png); 
+}
+.zp4{
+    width: 50px;
+    height: 60px;
+    display: inline-block;
+    background: 0 -200px url(../img/icon01.png); 
+}
+.zp4:hover{
+    background: 0 -598.2px url(../img/icon01.png); 
+}
+.zpabout{
+    width: 20px;
+    line-height: 120%;
+    color: black;
+    font-weight: bold;
+    display: inline-block;
+    font-family:"宋体";
+    font:white;
+}
