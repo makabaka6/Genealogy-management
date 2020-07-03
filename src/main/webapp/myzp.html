@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>首页</title>
     <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/myzp.css">
     <link rel="stylesheet" href="css/menu.css">
     <link rel="stylesheet" href="css/common.css">
     <script src="js/Jquery.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/myzp.js"></script>
 </head>
 <body  onLoad="color()">
     <script>
         function color(){
-            $("#menu_index").css("text-decoration","underline 2px");
-            $("#menu_index").css("color","red");
+            $("#menu_myzp").css("text-decoration","underline 2px");
+            $("#menu_myzp").css("color","red");
         }
         function changepic() {
             var reads= new FileReader();
@@ -39,13 +39,13 @@
                         <span id="span_username">欢迎您</span>
                     </li>
                     <li>
-                        <a id ="menu_index" class="" href="main.html" >首页</a>
+                        <a id ="menu_index" class="" href="" >首页</a>
                     </li>
                     <li>
                         <a id ="menu_user" class="" href="">个人中心</a>
                     </li>
                     <li>
-                        <a id ="menu_myzp" class="" href="">我的族谱</a>
+                        <a id ="menu_myzp" class="" href="myzp.html">我的族谱</a>
                     </li>
                     <li>
                         <a id ="menu_bjx" class="" href="HunderdSurnames.html">百家姓</a>
