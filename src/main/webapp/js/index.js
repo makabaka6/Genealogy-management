@@ -34,12 +34,12 @@ $(function(){
 						type:"post",
 						data:'{"uid":"'+acount+'","upassword":"'+pwd+'"}',
 						dataType: "json",
-						success:function(data)
+						success: function(data)
 						{
 							//登录成功进入主页面
-							if(data.flag==true){
+							if(data.flag){
 								//进入主页面
-								location.href="src\main\webapp\main.html"
+								location.href="http://localhost:8080/main.html"
 							}
 							// 登录失败
 							if(data.flag==false){

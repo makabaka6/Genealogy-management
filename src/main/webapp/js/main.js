@@ -11,6 +11,13 @@ $(function(){
             ul.css("marginLeft", 0);
         })
     }, 3000)
+
+    //
+    $.post("findUserServlet",{},function (data) {
+        //data格式:{uid:,username:}
+        var msg="欢迎回来,"+data.username;
+        $("#span_username").text(msg);
+    })
     $("#fincreate").click(function(){
         var img = document.getElementById("write_image").value;
         var Sname =document.getElementById("write_sname").value;
