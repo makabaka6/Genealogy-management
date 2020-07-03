@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/common.css">
+    <script src="js/Jquery.js"></script>
+    <script src="js/main.js"></script>
+    <style>
+        body {
+            background-color: #ccc;
+            width: 100%;
+            height: 100%;
+        }
+
+        .container {
+            width: 100%;
+            height: 791px;
+            overflow: hidden;
+            background-color: aqua;
+            display: flex;
+        }
+
+        .left {
+            flex: 3;
+            width: 30%;
+            height: 100%;
+            position: relative;
+            background-color: aquamarine;
+        }
+
+        .right {
+            flex: 7;
+            width: 70%;
+            height: 100%;
+            position: relative;
+
+            background-color: blue;
+        }
+
+        .container .left .float {
+            width: 80%;
+            height: 500px;
+            position: absolute;
+            border-radius: 8px;
+            top: 100px;
+            left: 30px;
+            background-color: black;
+
+        }
+        .container .left .float .icon{
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            top: 50px;
+            left: 0;
+            right: 0;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 50%;
+            background-color: #008c8c;
+        }
+        .container .left .float .tel{
+            width: 60%;
+            height: 50px;
+            position: absolute;
+            top: 200px;
+            left: 0;
+            right: 0;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 8px;
+            background-color: #008c8c;
+        }
+        .container .left .float .cate{
+            width: 80%;
+            height: 50px;
+            position: absolute;
+            text-indent: 10px;
+            bottom: 100px;
+            left: 0;
+            right: 0;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 8px;
+            background-color: #008c8c;
+        }
+        .container .left .float .cate span{
+            line-height: 50px;
+            text-indent: 10px;
+        }
+        .container .right .tabbar {
+            width: 80%;
+            height: 60px;
+            position: absolute;
+            border-radius: 8px;
+            top: 100px;
+            left: 0;
+            right: 0;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: red;
+
+        }
+        .container .right .tabbar ul{
+            text-align: center;
+            width: 100%;
+            height: 100%;
+        }
+        .container .right .tabbar ul li{
+            float: left;
+            width: 20%;
+            line-height: 60px;
+            text-align: center;
+            color: white;
+            
+        }
+        .container .right .bottom{
+            width: 200px;
+            height: 60px;
+            position: absolute;
+            text-align: center;
+            border-radius: 8px;
+            bottom: 50px;
+            left: 0;
+            right: 0;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: white;
+        }
+        .container .right .bottom span{
+            line-height: 60px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="left_logo">
+            <h1>电子族谱</h1>
+        </div>
+        <div class=navbox>
+            <div class="menu">
+                <ul>
+                    
+                    <li>
+                        <a id="menu_index" class="" href="main.html">首页</a>
+                    </li>
+                    <li>
+                        <a id="menu_user" class="" href="" style="color: #e60214;">个人中心</a>
+                    </li>
+                    <li>
+                        <a id="menu_myzp" class="" href="">我的族谱</a>
+                    </li>
+                    <li>
+                        <a id="menu_bjx" class="" href="HunderdSurnames.html">百家姓</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="login_button">
+                <span class="signin">退出登录</span>
+            </div>
+        </div>
+
+    </div>
+    <div class="container">
+        <div class="left">
+            <div class="float">
+                <div class="icon">
+                    
+                </div>
+                <div class="tel">
+
+                </div>
+                <div class="cate">
+                    <span>我的族谱（0册）</span>
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="tabbar">
+                <ul>
+                    <li>我的族谱</li>
+                    <li>修谱：0本.</li>
+                    <li>录入：0人</li>
+                    <li>创建族谱</li>
+                    <li>体例</li>
+                </ul>
+            </div>
+            <div class="bottom">
+                <span>创建族谱</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>关于族谱&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;联系我们</p>
+        <p>Copyright&nbsp;&nbsp;2020&nbsp;&nbsp;dianzizupu.com&nbsp;&nbsp;川ICP备1804531号-5</p>
+    </div>
+
+</body>
+
+</html>

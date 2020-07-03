@@ -98,3 +98,15 @@
 }
 /*创建族谱结束*/
 /* 中间区域结束 */
+
+/* 3D旋转画报开始 */
+.rotate{
+	width: 100%px;
+	height: 800px;
+	background-color: #008c8c;
+}
+.rotate .frame{
+	width: 100%;
+	height: 100%;
+}
+/* 3D旋转画报结束 */

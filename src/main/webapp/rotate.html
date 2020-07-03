@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D旋转相册</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            background-color: white;
+            perspective: 1500px;
+            /* ·perspective：用来定义3d动画距离浏览器的距离单位是(px); 相当于景深*/
+        }
+        .wrapper{
+            width: 150px;
+            height: 300px;
+            margin: 180px auto;
+            position: relative;
+
+            transform:rotateX(-10deg);
+
+            transform-style: preserve-3d;
+            /* transform-style设置为3d格式 */
+            user-select: none;
+            /* user-select设置不可被选中 */
+
+        }
+        .wrapper img{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background-color: #000;
+            /* 设置background-color是因为css渲染的问题，需要深究 */
+            transition: transform 1.5s;
+            /* transition 监听transform有变化时会有动画 */
+
+            -webkit-box-reflect: below 10px -webkit-linear-gradient(top , rgba(0,0,0,0) 50% ,rgba(0,0,0,0.5) 100%);
+            /* 这个reflect是影子的效果：blow从上而下，10px 是指本体和影子的距离 后面是一个渐变色 */
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <img src="img/1.jpg" alt="" draggable = "false">
+        <img src="img/2.jpg" alt="" draggable = "false">
+        <img src="img/3.jpg" alt="" draggable = "false">
+        <img src="img/4.jpg" alt="" draggable = "false">
+        <img src="img/5.jpg" alt="" draggable = "false">
+        <img src="img/6.jpg" alt="" draggable = "false">
+    </div>
+    <script>
+        //首先来过去元素：
+        var imgList = document.getElementsByTagName('img');
+        //获取到一个数组
+        var wrapper = document.getElementsByClassName('wrapper')[0];
+
+        // rotate()  rotateX()  rotateY()  rotateZ()
+        
+        // 所有的事件绑定中事件处理函数都是异步的
+        // 同步： 代码按顺序的执行  上面没有执行完不能执行下面的代码
+        // 异步： 代码执行到当前行  不会等到函数执行完成  就会继续下面的代码执行
+
+        window.onload = function(){
+            //每一张图片之间的夹角
+            var deg = 360 / imgList.length;
+            for(var i = 0; i < imgList.length; i++)
+            {
+                console.log(imgList);
+
+
+                imgList[i].style.transform = "rotateY("+ deg * i +"deg) translateZ(360px)";
+                //这里实现了图片的旋转和平移
+                
+                
+                // 0：   最后出现    延迟时间最长   延迟时间(length-1) * 0.1     每相邻两张图片的出现间隔0.1s
+                // 1:                                     (length - 2) * 0.1
+                // ....
+                // length - 3:                       0.2s 
+                // length - 2 :                      0.1s
+                // length - 1:  最先出现   延迟时间为  0s
+                imgList[i].style.transitionDelay = (imgList.length - 1 - i ) * 0.1 + 's';
+                //这里实现了每一张图片按照一定的延迟出现
+                
+                  
+            }
+        }
+             // 从左到右的距离应该是720px   ---》  360deg
+            //                    1px   ---->   0.5deg
+            var lastX = null,//鼠标点下后的点
+                lastY = null,//鼠标点下后的点
+                nowX = null,//鼠标停留后的点
+                nowY = null,//鼠标停留后的点
+                disX = null,//这是鼠标移动的距离的x的坐标
+                disY = null,//这是鼠标移动的距离的y的坐标
+                //设置初始值
+                // 当前相册旋转的角度
+                rotateX = -10,//设置的初始值就位本来的css中的设置的初始值
+                rotateY = 0;
+            var timer = null;//这是一个定时器用来控制缓冲
+            document.onmousedown = function (e) {
+
+                lastX = e.clientX;//每一次点击之后要更新x
+
+                lastY = e.clientY;//每一次点击之后也要更新y
+
+                document.onmousemove = function (e) {  //旋转阶段
+
+                    nowX = e.clientX;
+                    nowY = e.clientY;
+
+                    disX = nowX - lastX;
+                    disY = nowY - lastY;
+
+                    rotateX += -disY * 0.05;
+                    rotateY += disX * 0.05;
+                    rotateX = 0;
+
+                    //这是重点！！！！
+                    wrapper.style.transform = 'rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg)';
+
+
+                    lastY = nowY;
+                    lastX = nowX;
+                }
+                document.onmouseup = function () { //旋转缓冲阶段
+                    document.onmousemove = null;
+                    // 缓冲效果  
+                    timer = setInterval(function () {
+                        disX *= 0.95;
+                        disY *= 0.95;
+                        rotateX += -disY * 0.05;
+                        rotateY += disX * 0.05;
+                        rotateX = 0;
+
+
+                        //这是重点！！！！
+                        wrapper.style.transform = 'rotateX(' + rotateX + 'deg)rotateY(' + rotateY + 'deg)';
+
+
+                        if (Math.abs(disX) < 0.1 && Math.abs(disY) < 0.1) {
+                            clearInterval(timer);//当距离太小时关闭缓冲
+                        }
+
+                    }, 17)
+                }
+        }
+    
+    </script>
+</body>
+</html>
