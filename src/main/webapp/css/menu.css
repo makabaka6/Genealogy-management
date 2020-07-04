@@ -37,6 +37,9 @@ body {
 	float: right;
 	margin-right: 50px;
 }
+.span_username:hover{
+	text-decoration:none;
+}
 .header .navbox .menu{
 	margin:0;
 	float:left;

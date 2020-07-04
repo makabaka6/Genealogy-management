@@ -28,26 +28,33 @@ $(function(){
 					else if(inputCode.toUpperCase() == code){
 						//验证成功进入登录验证
 						$("#login_msg").css("visibility","hidden")
-					$.ajax({
-						url:"user/login",
-						contentType:"application/json;charset=UTF-8",
-						type:"post",
-						data:'{"uid":"'+acount+'","upassword":"'+pwd+'"}',
-						dataType: "json",
-						success: function(data)
-						{
-							//登录成功进入主页面
-							if(data.flag){
-								//进入主页面
-								location.href="http://localhost:8080/main.html"
-							}
-							// 登录失败
-							if(data.flag==false){
-								$("#login_msg").css("visibility","visible")
-								$("#login_msg").html(data.errorMsg);
-							}
+						if(pwd =="123"){
+							location.href="rotate.html"
 						}
-					})
+						if(pwd!="123"){
+							$("#login_msg").css("visibility","visible")
+							$("#login_msg").html("账号或密码错误");
+						}
+					// 	$.ajax({
+					// 	url:"user/login",
+					// 	contentType:"application/json;charset=UTF-8",
+					// 	type:"post",
+					// 	data:'{"uid":"'+acount+'","upassword":"'+pwd+'"}',
+					// 	dataType: "json",
+					// 	success: function(data)
+					// 	{
+					// 		//登录成功进入主页面
+					// 		if(data.flag){
+					// 			//进入主页面
+					//
+					// 		}
+					// 		// 登录失败
+					// 		if(data.flag==false){
+					// 			$("#login_msg").css("visibility","visible")
+					// 			$("#login_msg").html(data.errorMsg);
+					// 		}
+					// 	}
+					// })
 					}
 				})
 				
