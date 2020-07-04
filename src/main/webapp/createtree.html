@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首页</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/createtree.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/common.css">
+    <script src="js/Jquery.js"></script>
+    <script src="js/createtree.js"></script>
+</head>
+<body  onLoad="color()">
+    <script>
+        function color(){
+            $("#menu_myzp").css("text-decoration","underline 2px");
+            $("#menu_myzp").css("color","red");
+        }
+        function changepic() {
+            var reads= new FileReader();
+            f=document.getElementById("write_image").files[0];
+            reads.readAsDataURL(f);
+            reads.onload=function (e) {
+                document.getElementById('file').src=this.result;
+            };
+    
+        }
+    </script>
+
+    <div class="header" >
+        <div class="left_logo">
+            <h1>电子族谱</h1>
+        </div>
+        <div class= navbox >
+            <div class="menu">
+                <ul>
+                    <li>
+                        <a id ="menu_index" class="" href="main.html" >首页</a>
+                    </li>
+                    <li>
+                        <a id ="menu_user" class="" href="User.html">个人中心</a>
+                    </li>
+                    <li>
+                        <a id ="menu_myzp" class="" href="allzp.html">我的族谱</a>
+                    </li>
+                    <li>
+                        <a id ="menu_bjx" class="" href="HunderdSurnames.html">百家姓</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="login_button">
+                <span class="signin">退出登录</span>
+            </div>
+        </div>
+        
+    </div>
+    <div class="container" style="background:url(img/bg02.jpg);" >
+       
+       
+    </div>
+    <div class="footer">
+        <p>关于族谱&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;联系我们</p>
+        <p>Copyright&nbsp;&nbsp;2020&nbsp;&nbsp;dianzizupu.com&nbsp;&nbsp;川ICP备1804531号-5</p>
+    </div>
+</body>
+</html>
