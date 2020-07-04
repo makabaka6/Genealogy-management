@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <title>电子族谱网-首页</title>  
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">  
+    <link rel="stylesheet" href="./css/menu.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/common.css">
+    <script type="text/javascript" src="js/Jquery.js"></script>
+     <style type="text/css">
+     .main-banner{
+         width: 100%;
+         height: 800px; 
+     } 
+     .dis{
+         color: black;
+         text-decoration: none;
+     }
+     .main-name{
+         width: 100%;
+         height: 1039px;
+         margin: 0 auto;
+         background-color: #F5F5F5;
+         background-image: url("./img/zimu-bg.jpg");
+     }
+     .main-history{
+         width: 100%;
+         height: 500px;
+         margin-top: 0 auto;
+         background-image: url("./img/bg.jpg");
+     }
+     .swiper-container{
+         margin-left: auto;
+         margin-right: auto;
+          overflow: hidden;
+     }
+     .swiper-wrapper{
+         position: relative;
+         width: 100%;
+         height: 100%;
+         display: flex;
+         box-sizing: content-box;
+         z-index: 11;
+     }
+     .swiper-slide{
+         height: 800px;
+         /* width: 1240px; */
+         flex-shrink: 0;
+         position: relative;
+     }
+     #banner-slider img{
+         width: 100%;
+         height: 100%;
+         vertical-align: middle;
+     }
+     .top-title{
+         height: 40px;
+         padding: 50px 10px 0 0;
+         overflow: hidden;
+         line-height: 40px;
+         margin-left: 10px;
+     }
+     .top-title span{
+         font-size: 30px;
+         color: #333;
+         float: left;
+         font-weight: 800; 
+     }
+     .main-name .card{
+         width: 97% !important;
+         height: auto !important;
+         margin: 50px auto;
+         
+     }
+     .main-name .card img{
+         width: 100%;
+     }  
+     .main-history .content{
+         user-select: none;
+     }
+     .main-history .content p{
+         font-size: 30px;
+         color: #333;
+         line-height: 40px;
+         text-indent: 14px; 
+         margin-top: 10px;
+     }
+      .div1{
+
+          vertical-align: baseline;
+      }
+    </style>
+    <!--添加时钟功能-->
+    <script>
+        window.onload=function(){
+            //定时器每秒调用一次fnDate()
+            setInterval(function(){
+                fnDate();
+            },1000);
+        }
+        //js 获取当前时间
+        function fnDate(){
+            var oDiv=document.getElementById("div1");
+            var date=new Date();
+            var year=date.getFullYear();//当前年份
+            var month=date.getMonth();//当前月份
+            var data=date.getDate();//天
+            var time=year+"-"+fnW((month+1))+"-"+fnW(data)+" ";
+            oDiv.innerHTML=time;
+        }
+        //补位 当某个字段不是两位数时补0
+        function fnW(str){
+            var num;
+            str>10?num=str:num="0"+str;
+            return num;
+        }
+    </script>
+</head>
+<body> 
+    <div class="header" >
+        <div class="left_logo">
+            <h1>电子族谱</h1>
+        </div>
+        <div class= navbox >
+            <div class="menu">
+                <ul>
+                    <li>
+                        <a id="div1" class="div1"></a>
+                    </li>
+                    <li>
+                        <a class="dis">欢迎您:lys</a>
+                    </li>
+                    <li>
+                        <a id ="menu_index" class="" href="main.html" style="color: red;" >首页</a>
+                    </li>
+                    <li>
+                        <a id ="menu_user" class="" href="User.html">个人中心</a>
+                    </li>
+                    <li>
+                        <a id ="menu_myzp" class="" href="allzp.html">我的族谱</a>
+                    </li>
+                    <li>
+                        <a id ="menu_bjx" class="" href="HunderdSurnames.html">百家姓</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="login_button">
+                <a href="index.html"><span class="signin" id="exit">退出登录</span></a>
+            </div>
+        </div> 
+    </div>
+    <!-- 页面主体 -->
+    <div class="main">
+        <div class="main-banner">
+            <div id="banner-slider" class="swiper-container" swiper-container-horizontal>
+                <div class="swiper-wrapper" >
+                    <div class="swiper-slide" >
+                       <img src="./img/index_banner_1.jpg" alt="家族云banner"> 
+                    </div> 
+                </div>
+            </div>
+        </div> 
+        <div class="main-name">
+            <p class="top-title">
+                <span>姓氏百科</span>
+            </p>
+            <div class="card">
+                 <img src="./img/name.png" alt="">
+            </div> 
+        </div>
+        <div class="main-history">
+            <p class="top-title">
+                <span>百家姓起源</span>
+            </p>
+            <div class="content">
+                <p>123姓氏的起源可以追溯到人类原始社会的母系氏族制度时期，所以中国的许多最早的姓氏都是女字旁或底，如姚姓。姓是作为区分氏族的特定标志符号，如部落的名称或部落首领的名字。</p>
+                <p>随著社会生产力的发展，母系氏族制度过渡到父系氏族制度，氏族制度逐渐被阶级社会制度所替代，赐土以命氏的治理国家的方法、手段便产生了。氏的出现是人类历史的脚步在迈进阶级社会。姓和氏，是人类进步的两个阶段，是文明的产物。</p>
+                <p>夏、商时期，贵族皆有姓氏。姓的分支为氏，意思相当于家或族。夏王室为姒姓，另有霸主昆吾为己姓，己姓中有苏、顾、温、董、豢龙等氏。商王室为殷姓，另有霸主大彭、豕韦为彭姓。商代还有条氏、徐氏、萧氏等十三个姓。</p>
+            </div>
+        </div> 
+        
+    </div>
+    <IFRAME border=0 height=800px width="100%" src="rotate.html"></IFRAME> 
+    <div class="footer">
+        <p>关于族谱&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;联系我们</p>
+        <p>Copyright&nbsp;&nbsp;2020&nbsp;&nbsp;dianzizupu.com&nbsp;&nbsp;川ICP备1804531号-5
+        </p>
+    </div>
+</body>
+</html>
