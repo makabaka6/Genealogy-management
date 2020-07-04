@@ -13,9 +13,11 @@ body {
 	position: fixed;
 	z-index: 999;
 }
-
+.span_username{
+	text-decoration:none;
+}
 .header .title {
-	color: #333333;
+	color: #2aabd2;
 	line-height: 80px;
 	display: inline-block;
 }
