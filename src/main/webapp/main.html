@@ -6,12 +6,16 @@
     <link rel="stylesheet" href="./css/menu.css">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/common.css">
+    <script type="text/javascript" src="js/Jquery.js"></script>
      <style type="text/css">
      .main-banner{
          width: 100%;
          height: 800px; 
      } 
-     
+     .dis{
+         color: black;
+         text-decoration: none;
+     }
      .main-name{
          width: 100%;
          height: 1039px;
@@ -81,8 +85,37 @@
          text-indent: 14px; 
          margin-top: 10px;
      }
-      
+      .div1{
+
+          vertical-align: baseline;
+      }
     </style>
+    <!--添加时钟功能-->
+    <script>
+        window.onload=function(){
+            //定时器每秒调用一次fnDate()
+            setInterval(function(){
+                fnDate();
+            },1000);
+        }
+        //js 获取当前时间
+        function fnDate(){
+            var oDiv=document.getElementById("div1");
+            var date=new Date();
+            var year=date.getFullYear();//当前年份
+            var month=date.getMonth();//当前月份
+            var data=date.getDate();//天
+            var time=year+"-"+fnW((month+1))+"-"+fnW(data)+" ";
+            oDiv.innerHTML=time;
+        }
+        //补位 当某个字段不是两位数时补0
+        function fnW(str){
+            var num;
+            str>10?num=str:num="0"+str;
+            return num;
+        }
+    </script>
+</head>
 <body> 
     <div class="header" >
         <div class="left_logo">
@@ -92,7 +125,10 @@
             <div class="menu">
                 <ul>
                     <li>
-                        <span id="span_username">欢迎您</span>
+                        <a id="div1" class="div1"></a>
+                    </li>
+                    <li>
+                        <a class="dis">欢迎您:lys</a>
                     </li>
                     <li>
                         <a id ="menu_index" class="" href="main.html" style="color: red;" >首页</a>
@@ -109,7 +145,7 @@
                 </ul>
             </div>
             <div class="login_button">
-                <span class="signin">退出登录</span>
+                <a href="index.html"><span class="signin" id="exit">退出登录</span></a>
             </div>
         </div> 
     </div>

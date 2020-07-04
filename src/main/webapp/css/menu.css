@@ -51,8 +51,8 @@ body {
     height: 85px;
     width: 100px ;
     text-align: center;
-    font-size: 18px;
-    color: #333333;
+    font-size: 16px;
+
     border-radius: 2px;
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
@@ -65,13 +65,13 @@ body {
 	display: inline-block;
     height: 100%;
     line-height: 90px;
-	font-family: Microsoft YaHei;
+	font-size: 16px;
 	cursor: pointer;
-    color: #333333;
+    
     text-decoration: none;
 }
 .header .navbox .menu  a:hover {
-    border-bottom: 3px solid #e60214;
+
     cursor: pointer ;
 	color: #e60214;
 	text-decoration:underline 2px;
