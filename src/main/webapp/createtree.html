@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="css/common.css">
     <script src="js/Jquery.js"></script>
     <script src="js/createtree.js"></script>
+    <link href="zTree_v3-master/css/zTreeStyle/zTreeStyle.css" type="text/css" rel="stylesheet">
+    <script src="zTree_v3-master/js/jquery.ztree.all.min.js"></script>
 </head>
 <body  onLoad="color()">
     <script>
@@ -27,7 +29,6 @@
     
         }
     </script>
-
     <div class="header" >
         <div class="left_logo">
             <h1>电子族谱</h1>
@@ -55,8 +56,10 @@
         </div>
         
     </div>
-    <div class="container" style="background:url(img/bg02.jpg);" >
-       
+    <div class="container" style="background-color:#d0deaa; background-image: url(img/bg03.png);" >
+       <div class="showtree">
+        <ul id="tree" class="ztree" style="width:230px; overflow:auto;"></ul>
+       </div>
        
     </div>
     <div class="footer">

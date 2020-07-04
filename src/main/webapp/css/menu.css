@@ -2,6 +2,11 @@
 body {
 	position: relative;
 }
+.container{
+	width: 1519px;
+	height: 950px;
+	overflow: hidden;
+}
 .header {
 	font-size: 18px;
 	width: 100%;
@@ -22,13 +27,14 @@ body {
 }
 .header .left_logo {
 	/* text-indent: 用来隐藏文字，保证语义化，有利于seo */
+	margin-left:120px;
 	text-indent: -1000px;
 	text-align: center;
 	line-height: 80px;
-	width: 150px;
-	height: 90%;
+	width: 500px;
+	height: 100%;
 	float: left;
-	background: url(../img/logo.png) no-repeat;
+	background: url(../img/logo_all.png) no-repeat;
 	background-position: center;
 	background-size: contain;
 	/* background-size: cover; */
