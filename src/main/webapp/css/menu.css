@@ -2,11 +2,6 @@
 body {
 	position: relative;
 }
-.container{
-	width: 1519px;
-	height: 950px;
-	overflow: hidden;
-}
 .header {
 	font-size: 18px;
 	width: 100%;
