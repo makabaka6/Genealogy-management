@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首页</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/myzp.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/common.css">
+    <script src="js/Jquery.js"></script>
+    <script src="js/myzp.js"></script>
+    <style>
+       
+       .add_book {     
+    background-color: whitesmoke;
+    top:10px;
+    margin-left: 200px;
+    width: 73.2%;
+    height: 48px;
+    font-size: 24px;
+    font-family: MicrosoftYaHei;
+    font-weight: 400;
+    color: rgba(51, 51, 51, 1);
+    border-bottom: 1px solid #E60214;
+    margin-bottom: 27px;
+    text-align: left;
+}.add_book > span {
+    display: inline-block;
+    color: #666666;
+    font-size: 16px;
+    width: 110px;
+    height: 48px;
+    text-align: center;
+    line-height: 46px;
+    cursor: pointer;
+}
+.container .unzpbox #local {
+    font-size: 18px;
+    width: 1200px;
+    height: 0px;
+    background: #FFC300;
+    margin-bottom: 40px;
+        background-position-x: 0%;
+        background-position-y: 0%;
+        background-repeat: repeat;
+        background-image: none;
+    margin: 100px auto 0px;
+    padding-left: 0.4rem;
+    line-height: 30px;
+    background-repeat: no-repeat;
+    background-position: 0.2rem center;
+}
+    </style>
+</head>
+<body  onLoad="color()">
+    <script>
+        function color(){
+            $("#menu_myzp").css("text-decoration","underline 2px");
+            $("#menu_myzp").css("color","red");
+        }
+        function changepic() {
+            var reads= new FileReader();
+            f=document.getElementById("write_image").files[0];
+            reads.readAsDataURL(f);
+            reads.onload=function (e) {
+                document.getElementById('file').src=this.result;
+            };
+    
+        }
+    </script>
+
+    <div class="header" >
+        <div class="left_logo">
+            <h1>电子族谱</h1>
+        </div>
+        <div class= navbox >
+            <div class="menu">
+                <ul>
+                    <li>
+                        <a id ="menu_index" class="" href="" >首页</a>
+                    </li>
+                    <li>
+                        <a id ="menu_user" class="" href="User.html">个人中心</a>
+                    </li>
+                    <li>
+                        <a id ="menu_myzp" class="" href="allzp.html">我的族谱</a>
+                    </li>
+                    <li>
+                        <a id ="menu_bjx" class="" href="HunderdSurnames.html">百家姓</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="login_button">
+                <span class="signin">退出登录</span>
+            </div>
+        </div>
+        
+    </div>
+    <div class="container" style="background:url(img/bg01.jpg)  no-repeat ;background-size: cover; -moz-background-size: cover;">
+        <div class="unzpbox">
+            <div id="local"></div>
+            <div class="add_book">
+                <span  onclick="editor()" id="editor" style="background-color: #E60214; color: white;" ">编辑资料</span> 
+                <span onclick="directory()" id="directory">族谱目录</span> 
+                <span onclick="empower()" id="empower"> 多人协作</span> 
+                <span onclick="warrant()" id="warrant">家族圈授权</span>
+            </div>
+            <div class="createzp" >
+                <form action="">
+                <!-- 上传图片 -->
+                <div class="zpimage">
+                    <img src="img/zp01.jpg" id="file" width="300"  height="400" style="background:floralwhite; margin-top: 20px;" >
+                    <input type="file" accept="image/png, image/jpeg, image/gif, image/jpg" onchange="changepic()"
+                     id="write_image" style="margin-left: 100px;margin-top: 15px;" name="上传照片">
+                </div>
+                <!-- 上传文字信息 -->
+                <div class="zptext">
+                    <input type="text" class="input_unzp" id="write_sname"  placeholder="*族谱姓氏" value="凉" maxlength="8"  style="top:20px; position: absolute;">
+				    <input type="text" class="input_unzp" id="write_name" placeholder="*族谱名称" value="铁马冰河" style="top:80px; position: absolute;">
+                    <input type="text" class="input_unzp" id="write_jx" placeholder="*族谱家训" value="人之初，性本善。" style="top:140px;position: absolute;">
+                    <textarea class="input_unzp" id="write_big"placeholder="族谱大事记" maxlength="500" style="top:200px;position: absolute;"></textarea>
+                    <textarea  class="input_unzp" id="write_intro" placeholder="族谱简介"  maxlength="100" style="top:430px;position: absolute;">湘北河畔世代相袭</textarea>
+                    <div class="span" style="margin-left:530px; margin-top:410px; font-size:18px">
+                        <span class="error-desc1" text-align: center;display:block;></span>
+                    </div> 
+                    <div class="span" style="margin-left:530px; margin-top:110px; font-size:18px">
+                        <span class="error-desc2" text-align: center;display:block;></span>
+                    </div> 
+                </div>
+                </form>	 
+                
+                <div class="upload_zp">
+				     <input id="fincreate" type="button" value="修改族谱" style="position:absolute;top:600px;left:450px" onclick="window.location.href='allzp.html'"/>
+				</div>	
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <p>关于族谱&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;联系我们</p>
+        <p>Copyright&nbsp;&nbsp;2020&nbsp;&nbsp;dianzizupu.com&nbsp;&nbsp;川ICP备1804531号-5</p>
+    </div>
+</body>
+</html>
