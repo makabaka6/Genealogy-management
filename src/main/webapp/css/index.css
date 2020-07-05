@@ -17,6 +17,7 @@ body {
 	text-decoration:none;
 }
 .header .title {
+	margin-right: 222px;
 	color: #2aabd2;
 	line-height: 80px;
 	display: inline-block;
@@ -27,11 +28,11 @@ body {
 	text-indent: -1000px;
 	text-align: center;
 	line-height: 80px;
-	width: 150px;
+	width: 500px;
 	height: 100%;
 	float: left;
 	background: url(../img/logo_all.png) no-repeat;
-	/* background-position: center; */
+	background-position: center;
 	background-size: contain;
 
 }
@@ -153,15 +154,15 @@ body {
 	line-height: 100%;
 }
 
-.container .login_frame .login_btn {
+/* .container .login_frame .login_btn {
 
 	width: 312px;
 	height: 30px;
 	margin: 0 auto;
 	margin-top: 20px;
-}
+} */
 
-.container .login_frame .login_btn .btn {
+/* .container .login_frame .login_btn .btn {
 	float: left;
 	width: 150px;
 	height: 100%;
@@ -170,7 +171,7 @@ body {
 	background-color: #f0f0f0;
 	border: 1px solid orange;
 	border-radius: 6px;
-}
+} */
 
 .container .login_frame .login_btn .check {
 	line-height: 30px;
@@ -192,7 +193,7 @@ body {
 	background-color: white;
 }
 
-.container .login_frame .register:hover {
+.container .login_frame .register:hover,.container .login_frame .Button1:hover {
 	background-color: orange;
 	color: white;
 }

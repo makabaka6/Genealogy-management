@@ -74,4 +74,6 @@ $(function(){
             $('.error-desc2').val($('#input_textarea').val().substring(0, 100)); 
         }
     })
+
+    // 统计功能
 })

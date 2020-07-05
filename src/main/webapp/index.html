@@ -69,11 +69,11 @@
             box-sizing: border-box;
 
         }
-
-        #Button1,#Button2:hover {
+        
+        /* #Button1,#Button2:hover {
             background-color: orange;
             color: white;
-        }
+        } */
     </style>
 </head>
 <body onLoad="createCode()">
@@ -113,8 +113,8 @@
     <div class="container">
         <ul class="swiper">/*轮播图*/
             <li><a href="javascript:void(0)"><img src="img/index_back.png" alt=""></a></li>
-            <li><a href="javascript:void(0)"><img src="img/login02.jpg" alt=""></a></li>
-            <li><a href="javascript:void(0)"><img src="img/login03.jpg" alt=""></a></li>
+            <li><a href="javascript:void(0)"><img src="img/bg2.png" alt=""></a></li>
+            <li><a href="javascript:void(0)"><img src="img/bg3.png" alt=""></a></li>
         </ul>
         <div class="login_frame">
             <h4>登录</h4>
@@ -132,7 +132,7 @@
                         <input type="button" onClick="createCode()" id="checkCode" />
                 
                         <div class="check">
-                            <input id="Button1" type="button" value="登录" />
+                            <input class="Button1" id="Button1" type="button" value="登录"  />
                             <input type="checkbox"><span style="color: #75759d; cursor: pointer;font-size: 16px;">自动登录</span>
                         </div>
                     </form>

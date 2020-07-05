@@ -27,7 +27,7 @@ body {
 }
 .header .left_logo {
 	/* text-indent: 用来隐藏文字，保证语义化，有利于seo */
-	margin-left:120px;
+	/* margin-left:120px; */
 	text-indent: -1000px;
 	text-align: center;
 	line-height: 80px;

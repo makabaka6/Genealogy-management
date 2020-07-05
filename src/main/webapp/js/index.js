@@ -29,7 +29,7 @@ $(function(){
 						//验证成功进入登录验证
 						$("#login_msg").css("visibility","hidden")
 						if(pwd =="123"){
-							location.href="rotate.html"
+							location.href="main.html"
 						}
 						if(pwd!="123"){
 							$("#login_msg").css("visibility","visible")

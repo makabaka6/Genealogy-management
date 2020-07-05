@@ -1,127 +1,210 @@
  <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>首页</title>
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/allzp.css">
-    <link rel="stylesheet" href="css/menu.css">
-    <link rel="stylesheet" href="css/common.css">
-    <script src="js/Jquery.js"></script>
-    <script src="js/allzp.js"></script>
-</head>
-<body  onLoad="color()">
-    <script>
-        function color(){
-            $("#menu_myzp").css("text-decoration","underline 2px");
-            $("#menu_myzp").css("color","red");
-        }
-        function changepic() {
-            var reads= new FileReader();
-            f=document.getElementById("write_image").files[0];
-            reads.readAsDataURL(f);
-            reads.onload=function (e) {
-                document.getElementById('file').src=this.result;
-            };
-    
-        }
-    </script>
+ <html lang="en">
 
-    <div class="header" >
-        <div class="left_logo">
-            <h1>电子族谱</h1>
-        </div>
-        <div class= navbox >
-            <div class="menu">
-                <ul>
-                    <li>
-                        <a id ="menu_index" class="" href="main.html" >首页</a>
-                    </li>
-                    <li>
-                        <a id ="menu_user" class="" href="User.html">个人中心</a>
-                    </li>
-                    <li>
-                        <a id ="menu_myzp" class="" href="">我的族谱</a>
-                    </li>
-                    <li>
-                        <a id ="menu_bjx" class="" href="HunderdSurnames.html">百家姓</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="login_button">
-                <a href="index.html"><span class="signin" id="exit">退出登录</span></a>
-            </div>
-        </div>
-        
-    </div>
-    <div class="container" style="background:url(img/bg02.jpg);" >
-        <div class="myzpbox">
-            <!-- 我的族谱主页面 -->
-            <div class="personbox">
-                <div class ="person_img" >
-                    <a class="img1">
-                        <img src="img\tx.jpg" style="border-radius:50px" width=70px height=70px >
-                    </a>
-                     <a id="linkabout" class="linkabout" href="" >关于我</a>
-                </div>
-                <div class ="person_name">
-                    <h1 class="name_title">
-                        <a class="ttl">半山凉</a>
-                    </h1>
-                </div>
-                <ul class ="icon_menu">
-                    <li>
-                        <a class="createzp" href="myzp.html" title="创建族谱" rel="nofollow"></a>
-                        <p class="menuabout">创建族谱</p>
-                    </li>
-                </ul>
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>首页</title>
+     <link rel="stylesheet" href="css/reset.css">
+     <link rel="stylesheet" href="css/allzp.css">
+     <link rel="stylesheet" href="css/menu.css">
+     <link rel="stylesheet" href="css/common.css">
+     <script src="js/Jquery.js"></script>
+     <script src="js/allzp.js"></script>
+     <style>
+         .showzp .search{
+             position: relative;
+             width: 100%;
+             height: 157px;
+             margin-top: 150px;
+             background-color: teal;
+             background: url(img/spectral_seach.png) no-repeat;
+             background-position: center;
+             background-size: contain;
+             visibility:visible;
+         }
+         .showzp .search input{
+             width: 100px;
+             height: 40px;
+             position: absolute;
+             bottom: -50px;
+             left: 0;
+             right: 0;
+             margin-left: auto;
+             margin-right: auto;
+             border-radius: 8px;
+             background-color: white;
+             color: orange;
+             border: 1px solid orange;
+             cursor: pointer;
+             outline: none;
+         }
+         .showzp .search input:hover{
+            color: white;
+            background-color: orange;
+         }
+         .count_bg {
+             position: fixed;
+             z-index: 3;
+             left: 0;
+             top: 0;
+             width: 100%;
+             height: 100%;
+             background: rgb(0, 0, 0, 0.75);
+             visibility: hidden;
+         }
+
+         .count {
+             width: 200px;
+             height: 200px;
+             border-radius: 8px;
+             position: absolute;
+             /* left: 400px; */
+             top: 300px;
+             left: 0;
+             right: 0;
+             margin-left: auto;
+             margin-right: auto;
+             background: yellow;
+             /* visibility: hidden; */
+             text-align: center;
+         }
+         
+     </style>
+ </head>
+
+ <body onLoad="color()">
+     <script>
+         function color() {
+             $("#menu_myzp").css("text-decoration", "underline 2px");
+             $("#menu_myzp").css("color", "red");
+         }
+
+         function changepic() {
+             var reads = new FileReader();
+             f = document.getElementById("write_image").files[0];
+             reads.readAsDataURL(f);
+             reads.onload = function (e) {
+                 document.getElementById('file').src = this.result;
+             };
+
+         }
+         $(function(){
+             $(".search .create").click(function(){
+                 $(".search").css("visibility","hidden");
+                 location.href = "resetzp.html";
+             })
+         })
+     </script>
+
+     <div class="header">
+         <div class="left_logo">
+             <h1>电子族谱</h1>
+         </div>
+         <div class=navbox>
+             <div class="menu">
+                 <ul>
+                     <li>
+                         <a id="menu_index" class="" href="main.html">首页</a>
+                     </li>
+                     <li>
+                         <a id="menu_user" class="" href="User.html">个人中心</a>
+                     </li>
+                     <li>
+                         <a id="menu_myzp" class="" href="">我的族谱</a>
+                     </li>
+                     <li>
+                         <a id="menu_bjx" class="" href="HunderdSurnames.html">百家姓</a>
+                     </li>
+                 </ul>
+             </div>
+             <div class="login_button">
+                 <a href="index.html"><span class="signin" id="exit">退出登录</span></a>
+             </div>
+         </div>
+
+     </div>
+     <div class="container" style="background:url(img/bg02.jpg);">
+         <div class="myzpbox">
+             <!-- 我的族谱主页面 -->
+             <div class="personbox">
+                 <div class="person_img">
+                     <a class="img1">
+                         <img src="img\tx.jpg" style="border-radius:50px" width=70px height=70px>
+                     </a>
+                     <a id="linkabout" class="linkabout" href="">关于我</a>
+                 </div>
+                 <div class="person_name">
+                     <h1 class="name_title">
+                         <a class="ttl">半山凉</a>
+                     </h1>
+                 </div>
+                 <ul class="icon_menu">
+                     <li>
+                         <a class="createzp" href="myzp.html" title="创建族谱" rel="nofollow"></a>
+                         <p class="menuabout">创建族谱</p>
+                     </li>
+                 </ul>
+             </div>
+
+         </div>
+         <div class="showzp" style="background-color: white;">
+           
+             <div id="local">
+                 <div class="contitle">我的族谱</div>
+                 <div class=modification>
+                     <span>修谱：</span>
+                     <span class="booknum">1</span>
+                 </div>
+                 <div class="entering">
+                     <span>录入：</span>
+                     <span class="peoplenum">0</span>
+                 </div>
+             </div>
+             <div class="search">
+                <input type="button" value="创建族谱" class="create">
             </div>
             
-        </div>
-        <div class="showzp" style="background-color: white;">
-            <div id="local">
-                <div class="contitle">我的族谱</div>
-                <div class=modification>
-                    <span>修谱：</span>
-                    <span class="booknum">1</span>
-                </div>
-                <div class="entering">
-                    <span>录入：</span>
-                    <span class="peoplenum">0</span>
-                </div>
-            </div>
-            <div class="family_UI">
-                <li class ="boxLi">
-                    <div class ="zpcontent">
-                        <div class="zp_img" >
-                            <div class="zp_icon">铁马冰河</div>
-                        </div>
-                        <div class="famConRight">
-                            <p class="zp_name" title="sgzqzp">铁马冰河</p>
-                            <p style="margin-top:24px" class="famConRightDate">更新日期：<span>2020-07-03</span></p>
-                            <p class="fam_num">总人数：<span>0</span></p>
-                            <a class="lrBtns" target="_blank" href="">录入族谱</a>
-                        </div>
-                        
-                    </div>
-                    <div class ="zpmenu">
-                            <a class="zp1" href="resetzp.html" title="编辑" rel="nofollow"></a>
-                            <p class="zpabout">编辑</p>
-                            <a class="zp2" href="/" title="统计" rel="nofollow"></a>
-                            <p class="zpabout">统计</p>
-                            <a class="zp3" href="/" title="查询" rel="nofollow"></a>
-                            <p class="zpabout">查询</p>
-                            <a class="zp4" href="/" title="删除" rel="nofollow"></a>
-                            <p class="zpabout">删除</p>
-                    </div>
-                </li>
-            </div>
-        </div>
-    </div>
-    <div class="footer">
-        <p>关于族谱&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;联系我们</p>
-        <p>Copyright&nbsp;&nbsp;2020&nbsp;&nbsp;dianzizupu.com&nbsp;&nbsp;川ICP备1804531号-5</p>
-    </div>
-</body>
-</html>
+             <div class="family_UI">
+                 
+                 <li class="boxLi">
+                     <div class="zpcontent">
+                         <div class="zp_img">
+                             <div class="zp_icon">铁马冰河</div>
+                         </div>
+                         <div class="famConRight">
+                             <p class="zp_name" title="sgzqzp">铁马冰河</p>
+                             <p style="margin-top:24px" class="famConRightDate">更新日期：<span>2020-07-03</span></p>
+                             <p class="fam_num">总人数：<span>0</span></p>
+                             <a class="lrBtns" target="_blank" href="">录入族谱</a>
+                         </div>
+
+                     </div>
+                     <div class="zpmenu">
+                         <a class="zp1" href="resetzp.html" title="编辑" rel="nofollow"></a>
+                         <p class="zpabout">编辑</p>
+                         <a class="zp2" href="/" title="统计" rel="nofollow"></a>
+                         <p class="zpabout">统计</p>
+                         <a class="zp3" href="/" title="查询" rel="nofollow"></a>
+                         <p class="zpabout">查询</p>
+                         <a class="zp4" href="/" title="删除" rel="nofollow"></a>
+                         <p class="zpabout">删除</p>
+                     </div>
+                 </li>
+             </div>
+         </div>
+     </div>
+     <div class="count_bg">
+         <div class="count">
+            <span class="person">统计人数:</span>
+            <input type="button" value="确认">
+         </div>
+     </div>
+
+     <div class="footer">
+         <p>关于族谱&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;联系我们</p>
+         <p>Copyright&nbsp;&nbsp;2020&nbsp;&nbsp;dianzizupu.com&nbsp;&nbsp;川ICP备1804531号-5</p>
+     </div>
+ </body>
+
+ </html>
