@@ -67,7 +67,7 @@
             margin-left: auto;
             margin-right: auto;
             border-radius: 50%;
-            background-color: #008c8c;
+            background-color: #ebe8a2;
             background: url(img/tx.jpg);
             border: 1px solid black;
             background-position: center;
@@ -75,7 +75,9 @@
         }
 
         .container .left .float .tel {
-            text-align: center;
+            /* text-align: center; */
+            text-indent: 10px;
+
             width: 60%;
             height: 50px;
             position: absolute;
@@ -85,7 +87,7 @@
             margin-left: auto;
             margin-right: auto;
             border-radius: 8px;
-            background-color: #008c8c;
+            background-color: #ebe8a2;
         }
 
         .container .left .float .tel span {
@@ -93,7 +95,7 @@
         }
 
         .container .left .float .cate {
-            width: 80%;
+            width: 60%;
             height: 50px;
             position: absolute;
             text-indent: 10px;
@@ -103,7 +105,7 @@
             margin-left: auto;
             margin-right: auto;
             border-radius: 8px;
-            background-color: #008c8c;
+            background-color: #ebe8a2;
         }
 
         .container .left .float .cate span {
@@ -189,6 +191,33 @@
             line-height: 60px;
             cursor: pointer;
         }
+        .reset_pwd{
+            width: 100%;
+            height: 300px;
+            /* background-color: aquamarine; */
+        }
+        .reset_pwd input{
+            margin:0 auto;
+            margin-top: 40px;
+            outline: none;
+            width: 210px;
+            height: 35px;
+            border: 1px solid orange;
+            border-radius: 8px;
+            text-indent: 10px;
+
+        }
+        #convert{
+            background-color: white;
+            color: orange;
+            text-indent: 0;
+
+        }
+        #convert:hover{
+            background-color: orange;
+            color: white;
+            cursor: pointer;
+        }
     </style>
 </head>
 
@@ -244,22 +273,16 @@
                         谈以下几点体会</li>
                     <li>性别：男</li>
                     <a href="">修改密码</a>
-
+                    <form class="reset_pwd">
+                        <input id="password"  type="password" placeholder="请输入密码" style="display: block;">
+                        <input id="password1" type="password" placeholder="请再次输入密码" style="display: block;">
+                        <input type="button" value="提交" id="convert" style="display: block;">
+                    </form>
                 </ul>
-                <form>
-                    <input id="password"  type="password" placeholder="请输入密码">
-                    <input id="password1" type="password" placeholder="请再次输入密码">
-                    <input type="button" value="提交" id="convert">
-                </form>
+                
 
             </div>
-            <div class="search">
-                <!-- <div class="pic"> 
-                </div>
-                <div class="remind">
-                    <span >抱歉，未搜索到相关内容</span>
-                </div> -->
-            </div>
+            
 
 
         </div>

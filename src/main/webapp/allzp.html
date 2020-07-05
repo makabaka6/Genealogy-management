@@ -59,8 +59,8 @@
          }
 
          .count {
-             width: 200px;
-             height: 200px;
+             width: 150px;
+             height: 150px;
              border-radius: 8px;
              position: absolute;
              /* left: 400px; */
@@ -69,9 +69,24 @@
              right: 0;
              margin-left: auto;
              margin-right: auto;
-             background: yellow;
+             background: #dacaac;
              /* visibility: hidden; */
              text-align: center;
+         }
+
+         .count input.sub {
+             outline: none;
+             margin: 30px 40px;
+             color: black;
+             background-color: #dacaac;
+             border: 1px solid black;
+             border-radius: 6px;
+         }
+
+         .count input.sub:hover {
+             color: #dacaac;
+             background-color: black;
+             cursor: pointer;
          }
      </style>
  </head>
@@ -99,9 +114,19 @@
                  //  $('.boxLi').css('visibility','visible');
                  //  location.href = "resetzp.html";
              })
-             $("#fincreate").click(function(){
-                $('.mengceng').css('display', 'none');
-                $('.boxLi').css('visibility','visible');
+             $("#fincreate").click(function () {
+                 $('.peoplenum').text('3');
+                 $('booknum').text('1');
+                 $('.mengceng').css('display', 'none');
+                 $('.boxLi').css('visibility', 'visible');
+                 
+             })
+             $(".zp2").click(function () {
+                 $('.count_bg').css('visibility', 'visible');
+             })
+             $('.count .sub').click(function(){
+                 
+                 $('.count_bg').css('visibility','hidden');
              })
          })
      </script>
@@ -191,46 +216,25 @@
                      <div class="zpmenu">
                          <a class="zp1" href="resetzp.html" title="编辑" rel="nofollow"></a>
                          <p class="zpabout">编辑</p>
-                         <a class="zp2" href="/" title="统计" rel="nofollow"></a>
+                         <a class="zp2" href="#" title="统计" rel="nofollow"></a>
                          <p class="zpabout">统计</p>
-                         <a class="zp3" href="/" title="查询" rel="nofollow"></a>
+                         <a class="zp3" href="#" title="查询" rel="nofollow"></a>
                          <p class="zpabout">查询</p>
-                         <a class="zp4" href="/" title="删除" rel="nofollow"></a>
+                         <a class="zp4" href="#" title="删除" rel="nofollow"></a>
                          <p class="zpabout">删除</p>
                      </div>
                  </li>
              </div>
 
          </div>
-         <!-- <div class="showzp" style="background-color: white;">
-           
-            <div class="family_UI">
-                <li class ="boxLi">
-                    <div class ="zpcontent">
-                        <div class="zp_img" >
-                            <div class="zp_icon">铁马冰河</div>
-                        </div>
-                        <div class="famConRight">
-                            <p class="zp_name" title="sgzqzp">铁马冰河</p>
-                            <p style="margin-top:24px" class="famConRightDate">更新日期：<span>2020-07-03</span></p>
-                            <p class="fam_num">总人数：<span>0</span></p>
-                            <a class="lrBtns" target="_blank" href="createtree.html">录入族谱</a>
-                        </div>
-                        
-                    </div>
-                    <div class ="zpmenu">
-                            <a class="zp1" href="resetzp.html" title="编辑" rel="nofollow"></a>
-                            <p class="zpabout">编辑</p>
-                            <a class="zp2" href="/" title="统计" rel="nofollow"></a>
-                            <p class="zpabout">统计</p>
-                            <a class="zp3" href="/" title="查询" rel="nofollow"></a>
-                            <p class="zpabout">查询</p>
-                            <a class="zp4" href="/" title="删除" rel="nofollow"></a>
-                            <p class="zpabout">删除</p>
-                    </div>
-                </li>
-            </div>
-        </div> -->
+         <div class="count_bg">
+             <div class="count" style="display: flex;flex-direction: column;">
+                 <span style="margin-top: 20px;">总人数</span>
+                 <span class="people" style="margin-top: 20px;">0</span>
+                 <input type="button" value="确定" class="sub">
+             </div>
+         </div>
+
      </div>
      <div class="mengceng">
          <div class="createzp_frame">
@@ -264,7 +268,7 @@
              </form>
 
              <div class="upload_zp">
-                 <input id="fincreate" type="button" value="修改族谱" style="position:absolute;top:600px;left:450px"/>
+                 <input id="fincreate" type="button" value="修改族谱" style="position:absolute;top:600px;left:450px" />
              </div>
          </div>
      </div>
@@ -273,6 +277,7 @@
          <p>关于族谱&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;联系我们</p>
          <p>Copyright&nbsp;&nbsp;2020&nbsp;&nbsp;dianzizupu.com&nbsp;&nbsp;川ICP备1804531号-5</p>
      </div>
+
  </body>
 
  </html>
