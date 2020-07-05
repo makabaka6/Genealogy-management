@@ -175,8 +175,10 @@
                  </div>
                  <ul class="icon_menu">
                      <li>
-                         <a class="createzp" href="myzp.html" title="创建族谱" rel="nofollow"></a>
-                         <p class="menuabout">创建族谱</p>
+                         <a class="createzp"  title="创建族谱" rel="nofollow"></a>
+                        <div class="search">
+                            <input type="button" style="border: 2px solid white;border-radius: 10px;" value="创建族谱" class="create">
+                        </div>
                      </li>
                  </ul>
              </div>
@@ -195,12 +197,9 @@
                      <span class="peoplenum">0</span>
                  </div>
              </div>
-             <div class="search">
-                 <input type="button" value="创建族谱" class="create">
-             </div>
 
              <div class="family_UI">
-                 <li class="boxLi">
+                 <li class="boxLi "style="visibility:hidden">
                      <div class="zpcontent">
                          <div class="zp_img">
                              <div class="zp_icon">铁马冰河</div>
@@ -248,16 +247,16 @@
                  </div>
                  <!-- 上传文字信息 -->
                  <div class="zptext">
-                     <input type="text" class="input_unzp" id="write_sname" placeholder="*族谱姓氏" value="凉" maxlength="8"
+                     <input type="text" class="input_unzp" id="write_sname" placeholder="*族谱姓氏" 
                          style="top:20px; position: absolute;">
-                     <input type="text" class="input_unzp" id="write_name" placeholder="*族谱名称" value="铁马冰河"
+                     <input type="text" class="input_unzp" id="write_name" placeholder="*族谱名称" 
                          style="top:80px; position: absolute;">
-                     <input type="text" class="input_unzp" id="write_jx" placeholder="*族谱家训" value="人之初，性本善。"
+                     <input type="text" class="input_unzp" id="write_jx" placeholder="*族谱家训" 
                          style="top:140px;position: absolute;">
                      <textarea class="input_unzp" id="write_big" placeholder="族谱大事记" maxlength="500"
                          style="top:200px;position: absolute;"></textarea>
                      <textarea class="input_unzp" id="write_intro" placeholder="族谱简介" maxlength="100"
-                         style="top:430px;position: absolute;">湘北河畔世代相袭</textarea>
+                         style="top:430px;position: absolute;"></textarea>
                      <div class="span" style="margin-left:530px; margin-top:410px; font-size:18px">
                          <span class="error-desc1" text-align: center;display:block;></span>
                      </div>
@@ -268,7 +267,7 @@
              </form>
 
              <div class="upload_zp">
-                 <input id="fincreate" type="button" value="修改族谱" style="position:absolute;top:600px;left:450px" />
+                 <input id="fincreate" type="button" value="创建族谱" style="position:absolute;top:600px;left:450px" />
              </div>
          </div>
      </div>

@@ -43,7 +43,7 @@
                         <a id ="menu_user" class="" href="User.html">个人中心</a>
                     </li>
                     <li>
-                        <a id ="menu_myzp" class="" href="allzp.html">我的族谱</a>
+                        <a id ="menu_myzp" class="" href="allzp2.html">我的族谱</a>
                     </li>
                     <li>
                         <a id ="menu_bjx" class="" href="HunderdSurnames.html">百家姓</a>
@@ -65,13 +65,83 @@
             <span onclick="warrant()" id="s4">第四代</span>
             <span onclick="warrant()" id="s5">第五代</span>
             </div>
+            
         <div class="showtree">
-        <ul id="tree" class="ztree"></ul>
+            <img class="none" src="img/spectral_seach.png" style="margin-left: 200px;margin-top: 150px;">
+            <h1 class="none"style="margin-left: 250px;color:white">您没有输入任何信息</h1> 
+            <div class="treepos">
+                <ul id="tree" class="ztree"></ul>
+            </div>
+            
         
     </div>
     </div>
     <div class="zpbox">
-        <div class="inputbox"></div>
+        <div class="zp_name">铁马冰河：</div>
+        <div class="menu_input "style="height:65px;background-color:rgba(250,128,114,0.4);margin-left:10px;margin-right:10px; padding:5px">
+            <div class="button1">
+                <div class="zp1" href="/" title="统计" rel="nofollow"></div>
+                <p class="zpabout">添加</p>
+            </div>
+            <div class="button2">
+                <div class="zp2" title="编辑" rel="nofollow"></div>
+                <p class="zpabout">信息</p>
+            </div>
+            
+            
+        </div>
+        <div class="messagebox1">
+            <div class ="mess">
+                <p style="float: left;">姓名：</p>
+                <p id="mess_name">一代01</p>
+            </div>
+            <div class ="mess">
+                <p style="float: left;">姓别：</p>
+                <p id="mess_sex">男</p>
+            </div>
+            <div class ="mess">
+                <p style="float: left;">生日：</p>
+                <p id="mess_birth">2001.09.10</p>
+            </div>
+            <div class ="mess">
+                <p style="float: left;">父亲：</p>
+                <p id="mess_father">无记录</p>
+            </div>
+            <div class ="mess">
+                <p style="float: left;">配偶：</p>
+                <p id="mess_spose">无记录</p>
+            </div>
+        </div>
+        <div class="messagebox2">
+            <span class="alert" style="color: red;visibility: hidden;">您的信息输入不全！</span>
+            <div class="inputbox">
+                <p class="inputp">父代名：</p>
+                <input type="text" id="fname" value="您未选中任何族人" readonly>
+            </div>
+            <div class="inputbox">
+                <p class="inputp">子代名：</p>
+                <input type="text" id="name" placeholder="请输入名称">
+            </div>
+            <div class="inputbox">
+                <p class="inputp">性别：</p>
+                <input type="radio" class="input_sex" name="sex" checked="checked" value="男">男
+                <input type="radio" class="input_sex" name="sex" checked="checked" value="女">女
+            </div>
+            <div class="inputbox">
+                <p class="inputp">生日：</p>
+                <input type="date" id="birth" placeholder="请输入名称">
+            </div>
+            <div class="inputbox">
+                <p class="inputp">配偶名：</p>
+                <input type="text" id="spose" placeholder="请输入名称">
+            </div>
+            <div class="inputbox">
+                <input type="button" id="button" value="添加子代">
+            </div>
+        </div>
+        <div>
+            
+        </div>
     </div>
     <div class="footer">
         <p>关于族谱&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;联系我们</p>

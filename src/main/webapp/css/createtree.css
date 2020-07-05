@@ -36,6 +36,10 @@
     width: 400px;
     height: 2000px;
 }
+.treepos{
+    position: absolute;
+    margin-top: -330px;
+}
 .zpbox{
     position: fixed;
     margin-left: 850px;
@@ -43,8 +47,113 @@
     float: right;
     width: 600px;
     top:100px;
-    padding: 26px 0 0;
+    padding: 10px 0 0;
     background-color: rgba(255, 255, 255, 0.6);
     border: wheat  solid 2px;
     border-radius: 10px;
+}
+.zp_name{
+    margin-left: 12px;
+    font-family: '楷体';
+    font-size: 20px;
+    color:#008B8B;
+    margin-bottom: 5px;
+}
+.button1{
+    width: 100px;
+    background-color: rgba(245,245,245,0.4);
+    margin-right: 20px;
+    float: left;
+}
+.button2{
+    width: 100px;
+    margin-right: 20px;
+    float: left;
+}
+.zp1{
+    
+    width: 50px;
+    height: 60px;
+    display: inline-block;
+    background: 0 -398.7px url(../img/icon01.png); 
+}
+/* .zp1:hover{
+    background: 0 0px url(../img/icon01.png);  
+} */
+.zp2{
+    width: 50px;
+    height: 60px;
+    display: inline-block;
+    background: 0 -67px url(../img/icon01.png); 
+ }
+/* .zp2:hover{
+    background: 0 -466.2px url(../img/icon01.png); 
+}  */
+.zpabout{
+    width: 20px;
+    line-height: 120%;
+    color: white;
+    font-weight: bold;
+    display: inline-block;
+    font-family:"宋体";
+    font:white;
+}
+.messagebox1,.messagebox2{
+    position: absolute;
+    margin: 10px;
+    width: auto;
+    padding: 10px;
+}
+.messagebox1{
+    
+    visibility: hidden;
+}
+.mess{
+    margin-bottom: 20px;
+    /* background-color: white; */
+    width: 200px;
+    font-family: '宋体';
+    font-size: 20px;
+}
+.inputp{
+    position: relative;
+    float: left;
+    margin-top: 20px;
+    width: 100px;
+}
+.input_sex{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    position: relative;
+	width: 15px;
+	height: 15px;
+}
+#fname,#name,#birth,#spose{
+    position: relative;
+	width: 300px;
+	height: 30px;
+	font-size: 16px;
+
+	margin-top: 10px;
+	border-radius: 8px;
+	overflow: hidden;
+	outline: none;
+	border: 1px solid orange;
+	background-color: #f0f0f0;
+	padding: 5px;
+}
+#button,#button4{
+    position: absolute;
+	width: 100px;
+	height: 30px;
+    font-size: 16px;
+    margin-left:200px;
+	margin-top: 30px;
+	border-radius: 8px;
+	overflow: hidden;
+	outline: none;
+    border: 1px solid orange;
+    cursor: pointer;
+	background-color: #fadcb5;
+	padding: 5px;
 }
