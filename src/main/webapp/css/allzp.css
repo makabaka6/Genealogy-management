@@ -1,6 +1,14 @@
+body{
+    width: 100%;
+    height: 100%;
+}
+html{
+    width: 100%;
+    height: 100%;
+}
 .container {
     width: 1519px;
-	height: 950px;
+	height: 800px;
 	overflow: hidden;
 }
 .myzpbox{
@@ -289,4 +297,64 @@ border-radius: 4px;
     display: inline-block;
     font-family:"宋体";
     font:white;
+}
+.mengceng{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    /* z-index: 9999; */
+    background-color:rgba(0, 0, 0,0.8);
+    display: none;
+}
+.createzp_frame{
+    padding:6px;
+	position: absolute;
+	left: 200px;
+	top: 100px;
+	width: 1100px;
+	height: 650px;
+    background: white;
+
+    border-radius: 12px;
+}
+.createzp_frame .zpimage{
+	position: absolute;
+	width: 500px;
+	height: 100%;
+}
+.createzp_frame .zptext{
+	left:500px;
+	position: absolute;
+	width: 600px;
+	height: 100%;
+}
+.createzp_frame .input_unzp{
+	width: 300px;
+	height: 30px;
+	font-size: 16px;
+	
+	margin-top: 20px;
+	border-radius: 8px;
+	overflow: hidden;
+	outline: none;
+	border: 1px solid orange;
+	background-color: #f0f0f0;				
+	padding: 5px;
+}
+.createzp_frame #write_jx{
+	width: 500px;
+}
+.createzp_frame #write_intro{
+	width: 500px;
+	height: 100px;
+	resize:none;
+	overflow: auto; width: 500px; height: 100px;
+}
+.createzp_frame #write_big{	
+	width: 500px;
+	height: 200px;
+	resize:none;
+	overflow: auto; width: 500px; height: 200px;
 }

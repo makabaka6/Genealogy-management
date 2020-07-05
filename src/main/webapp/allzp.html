@@ -9,10 +9,11 @@
      <link rel="stylesheet" href="css/allzp.css">
      <link rel="stylesheet" href="css/menu.css">
      <link rel="stylesheet" href="css/common.css">
+     <link rel="stylesheet" href="css/myzp.css">
      <script src="js/Jquery.js"></script>
      <script src="js/allzp.js"></script>
      <style>
-         .showzp .search{
+         .showzp .search {
              position: relative;
              width: 100%;
              height: 157px;
@@ -21,9 +22,10 @@
              background: url(img/spectral_seach.png) no-repeat;
              background-position: center;
              background-size: contain;
-             visibility:visible;
+
          }
-         .showzp .search input{
+
+         .showzp .search input {
              width: 100px;
              height: 40px;
              position: absolute;
@@ -39,10 +41,12 @@
              cursor: pointer;
              outline: none;
          }
-         .showzp .search input:hover{
-            color: white;
-            background-color: orange;
+
+         .showzp .search input:hover {
+             color: white;
+             background-color: orange;
          }
+
          .count_bg {
              position: fixed;
              z-index: 3;
@@ -69,7 +73,6 @@
              /* visibility: hidden; */
              text-align: center;
          }
-         
      </style>
  </head>
 
@@ -89,10 +92,16 @@
              };
 
          }
-         $(function(){
-             $(".search .create").click(function(){
-                 $(".search").css("visibility","hidden");
-                 location.href = "resetzp.html";
+         $(function () {
+             $(".search .create").click(function () {
+                 $(".search").css("display", "none");
+                 $('.mengceng').css('display', 'block');
+                 //  $('.boxLi').css('visibility','visible');
+                 //  location.href = "resetzp.html";
+             })
+             $("#fincreate").click(function(){
+                $('.mengceng').css('display', 'none');
+                $('.boxLi').css('visibility','visible');
              })
          })
      </script>
@@ -149,12 +158,12 @@
 
          </div>
          <div class="showzp" style="background-color: white;">
-           
+
              <div id="local">
                  <div class="contitle">我的族谱</div>
                  <div class=modification>
                      <span>修谱：</span>
-                     <span class="booknum">1</span>
+                     <span class="booknum">0</span>
                  </div>
                  <div class="entering">
                      <span>录入：</span>
@@ -162,12 +171,10 @@
                  </div>
              </div>
              <div class="search">
-                <input type="button" value="创建族谱" class="create">
-            </div>
-            
-<<<<<<< HEAD
+                 <input type="button" value="创建族谱" class="create">
+             </div>
+
              <div class="family_UI">
-                 
                  <li class="boxLi">
                      <div class="zpcontent">
                          <div class="zp_img">
@@ -177,7 +184,7 @@
                              <p class="zp_name" title="sgzqzp">铁马冰河</p>
                              <p style="margin-top:24px" class="famConRightDate">更新日期：<span>2020-07-03</span></p>
                              <p class="fam_num">总人数：<span>0</span></p>
-                             <a class="lrBtns" target="_blank" href="">录入族谱</a>
+                             <a class="lrBtns" target="_blank" href="createtree.html">录入族谱</a>
                          </div>
 
                      </div>
@@ -193,36 +200,10 @@
                      </div>
                  </li>
              </div>
-         </div>
-     </div>
-     <div class="count_bg">
-         <div class="count">
-            <span class="person">统计人数:</span>
-            <input type="button" value="确认">
-         </div>
-     </div>
 
-     <div class="footer">
-         <p>关于族谱&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;联系我们</p>
-         <p>Copyright&nbsp;&nbsp;2020&nbsp;&nbsp;dianzizupu.com&nbsp;&nbsp;川ICP备1804531号-5</p>
-     </div>
- </body>
-
- </html>
-=======
-        </div>
-        <div class="showzp" style="background-color: white;">
-            <div id="local">
-                <div class="contitle">我的族谱</div>
-                <div class=modification>
-                    <span>修谱：</span>
-                    <span class="booknum">1</span>
-                </div>
-                <div class="entering">
-                    <span>录入：</span>
-                    <span class="peoplenum">0</span>
-                </div>
-            </div>
+         </div>
+         <!-- <div class="showzp" style="background-color: white;">
+           
             <div class="family_UI">
                 <li class ="boxLi">
                     <div class ="zpcontent">
@@ -249,12 +230,49 @@
                     </div>
                 </li>
             </div>
-        </div>
-    </div>
-    <div class="footer">
-        <p>关于族谱&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;联系我们</p>
-        <p>Copyright&nbsp;&nbsp;2020&nbsp;&nbsp;dianzizupu.com&nbsp;&nbsp;川ICP备1804531号-5</p>
-    </div>
-</body>
-</html>
->>>>>>> 4a2971ea67e10f352777556f705633c23c53e62f
+        </div> -->
+     </div>
+     <div class="mengceng">
+         <div class="createzp_frame">
+             <form action="">
+                 <!-- 上传图片 -->
+                 <div class="zpimage">
+                     <img src="img/zp01.jpg" id="file" width="300" height="400"
+                         style="background:floralwhite; margin-top: 20px;">
+                     <input type="file" accept="image/png, image/jpeg, image/gif, image/jpg" onchange="changepic()"
+                         id="write_image" style="margin-left: 100px;margin-top: 15px;" name="上传照片">
+                 </div>
+                 <!-- 上传文字信息 -->
+                 <div class="zptext">
+                     <input type="text" class="input_unzp" id="write_sname" placeholder="*族谱姓氏" value="凉" maxlength="8"
+                         style="top:20px; position: absolute;">
+                     <input type="text" class="input_unzp" id="write_name" placeholder="*族谱名称" value="铁马冰河"
+                         style="top:80px; position: absolute;">
+                     <input type="text" class="input_unzp" id="write_jx" placeholder="*族谱家训" value="人之初，性本善。"
+                         style="top:140px;position: absolute;">
+                     <textarea class="input_unzp" id="write_big" placeholder="族谱大事记" maxlength="500"
+                         style="top:200px;position: absolute;"></textarea>
+                     <textarea class="input_unzp" id="write_intro" placeholder="族谱简介" maxlength="100"
+                         style="top:430px;position: absolute;">湘北河畔世代相袭</textarea>
+                     <div class="span" style="margin-left:530px; margin-top:410px; font-size:18px">
+                         <span class="error-desc1" text-align: center;display:block;></span>
+                     </div>
+                     <div class="span" style="margin-left:530px; margin-top:110px; font-size:18px">
+                         <span class="error-desc2" text-align: center;display:block;></span>
+                     </div>
+                 </div>
+             </form>
+
+             <div class="upload_zp">
+                 <input id="fincreate" type="button" value="修改族谱" style="position:absolute;top:600px;left:450px"/>
+             </div>
+         </div>
+     </div>
+
+     <div class="footer">
+         <p>关于族谱&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;联系我们</p>
+         <p>Copyright&nbsp;&nbsp;2020&nbsp;&nbsp;dianzizupu.com&nbsp;&nbsp;川ICP备1804531号-5</p>
+     </div>
+ </body>
+
+ </html>
