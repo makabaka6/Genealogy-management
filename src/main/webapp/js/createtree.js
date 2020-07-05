@@ -4,31 +4,7 @@ $(function(){
     var id2;var fid2;var name2; var fname2;var sex2;var birth2;var sex2; var spose2;
     
     var data=[//data是存储数据信息的json
-        {
-            "fid":0,
-            "id":1,
-            "name":"1",
-            "sex":"男",
-            "birth":"2001-09-10",
-            "spose":"spose1",
-            "open":true
-        },{
-            "fid":1,
-            "id":11,
-            "name":"2",
-            "sex":"男",
-            "birth":"2001-09-10",
-            "spose":"spose1",
-            "open":true
-        },{
-            "fid":1,
-            "id":12,
-            "name":"3",
-            "sex":"男",
-            "birth":"2001-09-10",
-            "spose":"spose1",
-            "open":true
-        }
+        
     ];
    
     //ztree设置信息配置
@@ -165,9 +141,7 @@ $("#button").click(function(){
     
 })
 $.fn.zTree.init($("#tree"),setting,data);
-$(".button2").click(function(){
-    
-}
+
 $(".button2").click(function(){
     document.getElementById("mess_name").innerText=name2;
     document.getElementById("mess_sex").innerText=sex2;
